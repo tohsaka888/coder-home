@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 13:40:07
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-16 17:00:01
+ * @LastEditTime: 2022-09-16 17:26:34
  * @Description: HomePage
  */
 import { Loader } from '@react-three/drei'
@@ -37,8 +37,9 @@ const Home: NextPage = () => {
       </Head>
       <div className="bg" />
       <Slogan title={'常州工学院 程序员之家'} locale={'zh'} />
+      <Slogan title={'The Home of Coder'} locale={'en'} />
       <BackgroundContainer>
-        {/* <LiveBackground /> */}
+        <LiveBackground />
       </BackgroundContainer>
       <div className="layer" />
       <Loader />

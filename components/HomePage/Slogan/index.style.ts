@@ -2,16 +2,16 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 17:05:00
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-16 17:15:26
+ * @LastEditTime: 2022-09-16 17:27:56
  * @Description: 请填写简介
  */
 
 import styled from "styled-components";
 
-export const SloganContainer = styled.div`
+export const SloganContainer = styled.div<{locale: 'zh' | 'en'}>`
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  top: ${({locale}) => locale === 'zh' ? '30vh' : 'calc(30vh + 5rem)' };
+  left: 3vw;
   display: flex;
   align-items: center;
   justify-content: center;

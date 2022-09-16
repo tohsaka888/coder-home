@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 14:54:13
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-16 17:12:13
+ * @LastEditTime: 2022-09-16 17:27:28
  * @Description: 请填写简介
  */
 
@@ -18,7 +18,7 @@ type Props = {
 function Slogan({ title, locale }: Props) {
   const delayRef = useRef<number>(0)
   return (
-    <SloganContainer>
+    <SloganContainer locale={locale}>
       {title.split('').map((c, i) => {
         let duration = Math.random() + (locale === 'zh' ? 0.5 : 0)
         delayRef.current += duration
@@ -32,12 +32,12 @@ function Slogan({ title, locale }: Props) {
               duration,
               delay: delayRef.current
             }}
-            initial={{ fontSize: '3rem', color: '#fff' }}
+            initial={{ fontSize: locale === 'zh' ? '3rem' : '1rem', color: '#fff' }}
           >
             {c != ' '
               ? (
                 i < 5
-                  ? <Text>{c}</Text>
+                  ? <span style={{ color: '#1890ff', fontWeight: 'bold' }}>{c}</span>
                   : c
               )
               : <span>&nbsp;</span>}
@@ -45,7 +45,7 @@ function Slogan({ title, locale }: Props) {
         )
       })}
       <motion.div
-        initial={{ width: '5px', background: 'tomato', fontWeight: 'bolder', marginLeft: '8px', height: (locale === 'zh' ? '50px' : '25px'), marginTop: locale === 'zh' ? '4px' : '0px' }}
+        initial={{ width: '5px', background: 'tomato', fontWeight: 'bolder', marginLeft: '8px', height: (locale === 'zh' ? '50px' : '20px'), marginTop: locale === 'zh' ? '4px' : '0px' }}
         animate={{
           opacity: [0, 1],
         }}
