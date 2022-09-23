@@ -2,20 +2,19 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 17:05:00
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-16 17:27:56
+ * @LastEditTime: 2022-09-19 09:21:48
  * @Description: 请填写简介
  */
 
 import styled from "styled-components";
 
-export const SloganContainer = styled.div<{locale: 'zh' | 'en'}>`
+export const SloganContainer = styled.div<{ locale: 'zh' | 'en' }>`
   position: fixed;
-  top: ${({locale}) => locale === 'zh' ? '30vh' : 'calc(30vh + 5rem)' };
+  top: ${({ locale }) => locale === 'zh' ? '30vh' : 'calc(30vh + 5rem)'};
   left: 3vw;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  align-items: flex-end;
 `
 
 export const Text = styled.div`
