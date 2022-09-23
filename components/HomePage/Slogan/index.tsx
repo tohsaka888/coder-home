@@ -2,25 +2,48 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 14:54:13
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-16 17:27:28
+ * @LastEditTime: 2022-09-19 09:22:44
  * @Description: 请填写简介
  */
 
-import React, { useRef } from 'react'
+import React, { CSSProperties, useCallback, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { SloganContainer, Text } from './index.style';
 
 type Props = {
   title: string;
-  locale: 'zh' | 'en'
+  locale: 'zh' | 'en';
+  style: CSSProperties;
+  highlightStyle?: CSSProperties;
+  cursorStyle: CSSProperties;
+  highlightLength?: number;
 }
 
-function Slogan({ title, locale }: Props) {
+function Slogan({
+  title,
+  locale,
+  style,
+  highlightStyle,
+  highlightLength,
+  cursorStyle
+}: Props) {
   const delayRef = useRef<number>(0)
+
+  const isHighlight = useCallback((index: number) => {
+    if (highlightLength) {
+      if (index < highlightLength) {
+        return highlightStyle;
+      } else {
+        return style;
+      }
+    } else {
+      return style;
+    }
+  }, [highlightLength, highlightStyle, style])
   return (
     <SloganContainer locale={locale}>
       {title.split('').map((c, i) => {
-        let duration = Math.random() + (locale === 'zh' ? 0.5 : 0)
+        let duration = Math.random()
         delayRef.current += duration
         return (
           <motion.div
@@ -32,23 +55,23 @@ function Slogan({ title, locale }: Props) {
               duration,
               delay: delayRef.current
             }}
-            initial={{ fontSize: locale === 'zh' ? '3rem' : '1rem', color: '#fff' }}
           >
             {c != ' '
-              ? (
-                i < 5
-                  ? <span style={{ color: '#1890ff', fontWeight: 'bold' }}>{c}</span>
-                  : c
-              )
-              : <span>&nbsp;</span>}
+              ? <span style={isHighlight(i)}>{c}</span>
+              : <span style={isHighlight(i)}>&nbsp;</span>}
           </motion.div>
         )
       })}
       <motion.div
-        initial={{ width: '5px', background: 'tomato', fontWeight: 'bolder', marginLeft: '8px', height: (locale === 'zh' ? '50px' : '20px'), marginTop: locale === 'zh' ? '4px' : '0px' }}
+        initial={{
+          background: 'tomato',
+          fontWeight: 'bolder',
+          marginLeft: '8px'
+        }}
         animate={{
           opacity: [0, 1],
         }}
+        style={cursorStyle}
         transition={{
           type: "spring",
           repeat: Infinity,
