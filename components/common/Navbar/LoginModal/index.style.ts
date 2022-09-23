@@ -17,11 +17,18 @@ export const Mask = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 10;
-`
+`;
 
 export const Title = styled.div`
   font-size: 1.5rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
   font-weight: bolder;
-`
+  padding: 4px;
+`;
+
+export const ImageContainer = styled.div<{ top: number; left: number }>`
+  position: absolute;
+  left: ${({ left }) => left + "px"};
+  top: ${({ top }) => top + "px"};
+`;
