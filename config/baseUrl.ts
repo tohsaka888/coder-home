@@ -6,5 +6,5 @@
  * @Description: baseUrl
  */
 
-export const baseUrl = process.env.NODE_ENV === 'production' ? 'https://' : 'http://localhost:3000'
+export const baseUrl = process.env.NODE_ENV === 'production' ? 'https://coder-home.netlify.app' : 'http://localhost:3000'
 export const competitionUrl = 'https://cxy-home-competition.netlify.app'
