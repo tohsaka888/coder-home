@@ -6,7 +6,7 @@ specifiers:
   '@react-three/drei': ^9.31.0
   '@react-three/fiber': ^8.7.4
   '@types/node': 18.7.18
-  '@types/react': 18.0.20
+  '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@types/styled-components': ^5.1.26
   '@types/three': ^0.144.0
@@ -49,7 +49,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.7.18
-  '@types/react': 18.0.20
+  '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@types/styled-components': 5.1.26
   '@types/three': 0.144.0
@@ -898,7 +898,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.0.20
+      '@types/react': 18.0.21
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -920,17 +920,17 @@ packages:
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
-      '@types/react': 18.0.20
+      '@types/react': 18.0.21
     dev: true
 
   /@types/react-reconciler/0.26.7:
     resolution: {integrity: sha512-mBDYl8x+oyPX/VBb3E638N0B7xG+SPk/EAMcVPeexqus/5aTpTphQi0curhhshOqRrc9t6OPoJfEUkbymse/lQ==}
     dependencies:
-      '@types/react': 18.0.20
+      '@types/react': 18.0.21
     dev: false
 
-  /@types/react/18.0.20:
-    resolution: {integrity: sha512-MWul1teSPxujEHVwZl4a5HxQ9vVNsjTchVA+xRqv/VYGCuKGAU6UhfrTdF5aBefwD1BHUD8i/zq+O/vyCm/FrA==}
+  /@types/react/18.0.21:
+    resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -943,7 +943,7 @@ packages:
     resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.20
+      '@types/react': 18.0.21
       csstype: 3.1.1
     dev: true
 
