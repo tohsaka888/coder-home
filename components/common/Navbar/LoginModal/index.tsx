@@ -19,9 +19,10 @@ type Props = {
   width: number;
   height?: number;
   title: string;
+  children: React.ReactNode;
 };
 
-function LoginModal({ width, height, title }: Props) {
+function LoginModal({ width, height, title, children }: Props) {
   const { visible, setVisible } = useContext(LoginModalShowContext)!;
 
   return ReactDOM.createPortal(
@@ -115,6 +116,7 @@ function LoginModal({ width, height, title }: Props) {
                 }}
               />
             </motion.div>
+            {children}
           </motion.div>
         </>
       )}
