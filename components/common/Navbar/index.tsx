@@ -18,6 +18,8 @@ import { LoginModalShowContext } from "./context";
 import dynamic from "next/dynamic";
 import NightInput from "../NightInput";
 import { NightFormContainer } from "./index.style";
+import useLoginOrRegister from "hooks/services/useLoginOrRegister";
+import useLoginStatus from "hooks/services/useLoginStatus";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -25,6 +27,15 @@ function Navbar() {
   const { list, loading } = useGetCompetitionList();
   const router = useRouter();
   const [visible, setVisible] = useState<boolean>(false);
+  const { login } = useLoginOrRegister();
+  const { loginStatus } = useLoginStatus();
+  const [account, setAccount] = useState<{
+    username: string;
+    password: string;
+  }>({
+    username: "",
+    password: "",
+  });
 
   const pathname = router.pathname;
 
@@ -108,10 +119,23 @@ function Navbar() {
             wrapperCol={{ span: 15 }}
           >
             <Form.Item label={"用户名"} name={"username"}>
-              <NightInput key={"username"} />
+              <NightInput
+                key={"username"}
+                placeholder={"请输入用户名"}
+                onChange={(e) => {
+                  setAccount({ ...account, username: e.target.value });
+                }}
+              />
             </Form.Item>
             <Form.Item label={"密码"} name={"password"}>
-              <NightInput key={"password"} type={"password"} />
+              <NightInput
+                key={"password"}
+                placeholder={"请输入密码"}
+                type={"password"}
+                onChange={(e) => {
+                  setAccount({ ...account, password: e.target.value });
+                }}
+              />
             </Form.Item>
           </Form>
           <Flex
@@ -131,6 +155,10 @@ function Navbar() {
               type={"primary"}
               style={{ width: "100%", margin: "24px 48px" }}
               size={"large"}
+              onClick={async () => {
+                await login({ ...account, type: "username" });
+                setVisible(false);
+              }}
             >
               登录
             </Button>
