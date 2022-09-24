@@ -25,6 +25,7 @@ export const Title = styled.div`
   font-style: italic;
   font-weight: bolder;
   padding: 4px;
+  border-bottom: 1px solid #cececef0;
 `;
 
 export const ImageContainer = styled.div<{ top: number; left: number }>`

@@ -18,5 +18,27 @@ export const LogoContainer = styled.div`
   font-style: italic;
   cursor: pointer;
   padding-right: 16px;
-  font-family: 'Times New Roman', Times, serif;
-`
+  font-family: "Times New Roman", Times, serif;
+`;
+
+export const NightFormContainer = styled.div`
+  & label {
+    color: #fff !important;
+    font-size: 1.1rem;
+  }
+
+  & input {
+    background-color: transparent !important;
+    color: #fff !important;
+  }
+
+  & .ant-form-item-control-input {
+    background-color: transparent !important;
+    color: #fff !important;
+  }
+
+  & .ant-form-item {
+    background-color: transparent !important;
+    color: #fff !important;
+  }
+`;
