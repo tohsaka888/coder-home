@@ -1,7 +1,7 @@
 import { message } from "antd";
 import { loginUrl } from "config/baseUrl";
 import { useRouter } from "next/router";
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import useSWR from "swr";
 
 type ResponseData =
@@ -14,22 +14,30 @@ type ResponseData =
 
 function useLoginStatus() {
   const { push } = useRouter();
-  const getLoginStatus = useCallback(async (url: string) => {
-    const token = localStorage.getItem("token") || '';
-    const res = await fetch(url, {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify({ token }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: ResponseData = await res.json();
-    return data;
-  }, []);
+  const tokenRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    tokenRef.current = localStorage.getItem('token')
+  }, [])
+
+  const getLoginStatus = useCallback(
+    async (url: string) => {
+      const res = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify({ token: tokenRef.current }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data: ResponseData = await res.json();
+      return data;
+    },
+    []
+  );
 
   const { data, error } = useSWR(
-    `${loginUrl}/api/login/status`,
+    tokenRef.current ? `${loginUrl}/api/login/status` : null,
     getLoginStatus
   );
 
