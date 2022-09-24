@@ -7,7 +7,7 @@
  */
 
 import React, { CSSProperties, useMemo, useState } from "react";
-import { Button, Layout, Menu } from "antd";
+import { Button, Form, Layout, Menu } from "antd";
 import { useRouter } from "next/router";
 import { BsGithub, BsTrophyFill, BsTwitch } from "react-icons/bs";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
@@ -16,6 +16,8 @@ import { Flex } from "styles/index.style";
 import Logo from "./Logo";
 import { LoginModalShowContext } from "./context";
 import dynamic from "next/dynamic";
+import NightInput from "../NightInput";
+import { NightFormContainer } from "./index.style";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -81,7 +83,9 @@ function Navbar() {
             <BsGithub
               size={25}
               style={{ marginRight: "16px", cursor: "pointer" }}
-              onClick={() => router.push('https://github.com/tohsaka888/coder-home')}
+              onClick={() =>
+                router.push("https://github.com/tohsaka888/coder-home")
+              }
             />
             <Button
               type="primary"
@@ -96,7 +100,43 @@ function Navbar() {
           </Flex>
         </Flex>
       </Header>
-      <LoginModal width={600} height={350} title={"Login"} />
+      <LoginModal width={600} height={350} title={"Login"}>
+        <NightFormContainer>
+          <Form
+            style={{ marginTop: "36px" }}
+            labelCol={{ span: 5 }}
+            wrapperCol={{ span: 15 }}
+          >
+            <Form.Item label={"用户名"} name={"username"}>
+              <NightInput key={"username"} />
+            </Form.Item>
+            <Form.Item label={"密码"} name={"password"}>
+              <NightInput key={"password"} type={"password"} />
+            </Form.Item>
+          </Form>
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            style={{ margin: "0px 36px" }}
+          >
+            <Button type="link" size={"large"}>
+              邮箱登录
+            </Button>
+            <Button type="link" size={"large"}>
+              找回密码
+            </Button>
+          </Flex>
+          <Flex justifyContent="center">
+            <Button
+              type={"primary"}
+              style={{ width: "100%", margin: "24px 48px" }}
+              size={"large"}
+            >
+              登录
+            </Button>
+          </Flex>
+        </NightFormContainer>
+      </LoginModal>
     </LoginModalShowContext.Provider>
   );
 }
