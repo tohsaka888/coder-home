@@ -1,8 +1,19 @@
+import { message } from "antd";
 import { loginUrl } from "config/baseUrl";
-import React, { useCallback } from "react";
+import { useRouter } from "next/router";
+import React, { useCallback, useMemo } from "react";
 import useSWR from "swr";
 
+type ResponseData =
+  | {
+      success: true;
+      isLogin: boolean;
+      result: { username: string; email: string; iat: number; exp: number };
+    }
+  | { success: false; error: string };
+
 function useLoginStatus() {
+  const { push } = useRouter();
   const getLoginStatus = useCallback(async (url: string) => {
     const token = localStorage.getItem("token");
     const res = await fetch(url, {
@@ -13,7 +24,7 @@ function useLoginStatus() {
         "Content-Type": "application/json",
       },
     });
-    const data = await res.json();
+    const data: ResponseData = await res.json();
     return data;
   }, []);
 
@@ -22,7 +33,26 @@ function useLoginStatus() {
     getLoginStatus
   );
 
-  return <div>useLoginStatus</div>;
+  const loginStatus = useMemo(() => {
+    if (error) {
+      message.error(error.message);
+      push("/error");
+    }
+
+    if (data) {
+      if (data.success) {
+        return {
+          username: data.result.username,
+          email: data.result.email,
+        };
+      } else {
+        message.error(data.error);
+        push("/error");
+      }
+    }
+  }, [data, error, push]);
+
+  return { data, error, loginStatus };
 }
 
 export default useLoginStatus;
