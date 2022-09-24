@@ -15,7 +15,7 @@ type ResponseData =
 function useLoginStatus() {
   const { push } = useRouter();
   const getLoginStatus = useCallback(async (url: string) => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token") || '';
     const res = await fetch(url, {
       method: "POST",
       mode: "cors",
