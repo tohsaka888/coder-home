@@ -12,18 +12,14 @@ import Slogan from "components/HomePage/Slogan";
 import LiveBackground from "components/LiveBackground";
 import { BackgroundContainer } from "components/LiveBackground/index.style";
 import { competitionUrl } from "config/baseUrl";
-import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
-import useGetCompetitionList from "hooks/services/useGetCompetitionList";
 import type { GetServerSideProps, NextPage } from "next";
 import { SWRConfig } from "swr";
-// <{ fallback: Record<string, Response> }>
-// {
-// fallback,
-// }
-const Home: NextPage = () => {
+
+const Home: NextPage<{ fallback: Record<string, Response> }> = ({
+  fallback,
+}) => {
   return (
-    // <SWRConfig value={{ fallback }}>
-    <>
+    <SWRConfig value={{ fallback }}>
       <CustomHead />
       <Navbar />
       <div className="bg" />
@@ -49,28 +45,27 @@ const Home: NextPage = () => {
       </BackgroundContainer>
       <div className="layer" />
       <Loader />
-    </>
-    // </SWRConfig>
+    </SWRConfig>
   );
 };
 
-// export const getServerSideProps: GetServerSideProps = async () => {
-//   try {
-//     const res = await fetch(`${competitionUrl}/api/brief`);
-//     const data = await res.json();
-//     return {
-//       props: {
-//         fallback: {
-//           [`${competitionUrl}/api/brief`]: data,
-//         },
-//       },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//     return {
-//       props: {},
-//     };
-//   }
-// };
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const res = await fetch(`${competitionUrl}/api/brief`);
+    const data = await res.json();
+    return {
+      props: {
+        fallback: {
+          [`${competitionUrl}/api/brief`]: data,
+        },
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      notFound: true,
+    };
+  }
+};
 
 export default Home;
