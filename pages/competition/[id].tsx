@@ -23,7 +23,7 @@ function Competition() {
   return (
     <>
       <CustomHead />
-      <Navbar />
+      {/* <Navbar /> */}
       <Layout style={{ height: 'calc(100vh - 65px)' }}>
         <Layout.Sider theme='light' style={{ height: '100%' }}>
           {loading

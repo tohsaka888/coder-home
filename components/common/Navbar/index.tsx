@@ -23,6 +23,7 @@ import useLoginStatus from "hooks/services/useLoginStatus";
 import useAuthCode from "hooks/services/useAuthCode";
 import { useSWRConfig } from "swr";
 import { baseUrl } from "config/baseUrl";
+import LoginPanel from "./LoginPanel";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -108,7 +109,7 @@ function Navbar() {
         </Flex>
       </Header>
       <LoginModal width={600} height={390} title={"Login"}>
-        
+        <LoginPanel />
       </LoginModal>
     </LoginModalShowContext.Provider>
   );
