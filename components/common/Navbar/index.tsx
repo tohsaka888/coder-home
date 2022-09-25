@@ -106,7 +106,9 @@ function Navbar() {
               onSelect={(info) => {
                 if (!loading) {
                   if (info.key === "competition") {
-                    router.push(`/competition/${list[0].id}`);
+                    if (list) {
+                      router.push(`/competition/${list[0].id}`);
+                    }
                   }
                 }
               }}
