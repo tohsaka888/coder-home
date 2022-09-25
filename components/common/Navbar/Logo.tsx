@@ -7,12 +7,17 @@
  */
 
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Flex } from 'styles/index.style'
 import { LogoContainer } from './index.style'
 
 function Logo() {
   const router = useRouter()
+
+  useEffect(() => {
+    router.prefetch('/dashboard')
+  }, [router])
+
   return (
     <Flex onClick={() => {
       router.push('/')
