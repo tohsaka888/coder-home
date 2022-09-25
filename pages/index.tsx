@@ -23,7 +23,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
       <CustomHead />
       <Navbar />
       <div className="bg" />
-      <Slogan
+      {/* <Slogan
         title={"常州工学院 程序员之家"}
         locale={"zh"}
         style={{ color: "#fff", fontSize: "50px" }}
@@ -39,7 +39,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
         locale={"en"}
         style={{ color: "#fff", fontSize: "16px" }}
         cursorStyle={{ width: "16px", height: "5px" }}
-      />
+      /> */}
       <BackgroundContainer>
         <LiveBackground />
       </BackgroundContainer>
