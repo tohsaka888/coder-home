@@ -20,10 +20,12 @@ function NightInput(props: InputProps) {
       <motion.div
         initial={{
           height: "1px",
-          background: "#cecece5e",
+          background: "transparent",
+          borderRadius: '5px',
+          // borderBottom: '1px solid #1890ff'
         }}
         animate={{
-          background: isFocus ? "#1890ff" : "#cecece5e",
+          background: isFocus ? "#1890ff" : "transparent",
           width: [isFocus ? "0%" : "100%", "100%"],
           height: "2px",
         }}
