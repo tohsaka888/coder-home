@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
 export const NightFormContainer = styled.div`
   & label {
     color: #fff !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   & input {
@@ -38,6 +38,11 @@ export const NightFormContainer = styled.div`
   }
 
   & .ant-form-item {
+    background-color: transparent !important;
+    color: #fff !important;
+  }
+
+  & .ant-input-affix-wrapper {
     background-color: transparent !important;
     color: #fff !important;
   }
