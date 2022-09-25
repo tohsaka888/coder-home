@@ -12,18 +12,22 @@ import Slogan from "components/HomePage/Slogan";
 import LiveBackground from "components/LiveBackground";
 import { BackgroundContainer } from "components/LiveBackground/index.style";
 import { competitionUrl } from "config/baseUrl";
+import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
+import useGetCompetitionList from "hooks/services/useGetCompetitionList";
 import type { GetServerSideProps, NextPage } from "next";
 import { SWRConfig } from "swr";
-
-const Home: NextPage<{ fallback: Record<string, Response> }> = ({
-  fallback,
-}) => {
+// <{ fallback: Record<string, Response> }>
+// {
+// fallback,
+// }
+const Home: NextPage = () => {
   return (
-    <SWRConfig value={{ fallback }}>
+    // <SWRConfig value={{ fallback }}>
+    <>
       <CustomHead />
       <Navbar />
       <div className="bg" />
-      {/* <Slogan
+      <Slogan
         title={"常州工学院 程序员之家"}
         locale={"zh"}
         style={{ color: "#fff", fontSize: "50px" }}
@@ -39,33 +43,34 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
         locale={"en"}
         style={{ color: "#fff", fontSize: "16px" }}
         cursorStyle={{ width: "16px", height: "5px" }}
-      /> */}
+      />
       <BackgroundContainer>
         <LiveBackground />
       </BackgroundContainer>
       <div className="layer" />
       <Loader />
-    </SWRConfig>
+    </>
+    // </SWRConfig>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const res = await fetch(`${competitionUrl}/api/brief`);
-    const data = await res.json();
-    return {
-      props: {
-        fallback: {
-          [`${competitionUrl}/api/brief`]: data,
-        },
-      },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      props: {},
-    };
-  }
-};
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   try {
+//     const res = await fetch(`${competitionUrl}/api/brief`);
+//     const data = await res.json();
+//     return {
+//       props: {
+//         fallback: {
+//           [`${competitionUrl}/api/brief`]: data,
+//         },
+//       },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       props: {},
+//     };
+//   }
+// };
 
 export default Home;
