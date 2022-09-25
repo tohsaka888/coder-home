@@ -20,7 +20,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
 }) => {
   return (
     <SWRConfig value={{ fallback }}>
-      <CustomHead />
+      {/* <CustomHead /> */}
       <Navbar />
       <div className="bg" />
       <Slogan
@@ -41,7 +41,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
         cursorStyle={{ width: "16px", height: "5px" }}
       />
       <BackgroundContainer>
-        {/* <LiveBackground /> */}
+        <LiveBackground />
       </BackgroundContainer>
       <div className="layer" />
       <Loader />
