@@ -14,27 +14,24 @@ type ResponseData =
 
 function useLoginStatus() {
   const { push } = useRouter();
-  const tokenRef = useRef<string | null>(null)
+  const tokenRef = useRef<string | null>(null);
 
   useEffect(() => {
-    tokenRef.current = localStorage.getItem('token')
-  }, [])
+    tokenRef.current = localStorage.getItem("token");
+  }, []);
 
-  const getLoginStatus = useCallback(
-    async (url: string) => {
-      const res = await fetch(url, {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify({ token: tokenRef.current }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data: ResponseData = await res.json();
-      return data;
-    },
-    []
-  );
+  const getLoginStatus = useCallback(async (url: string) => {
+    const res = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({ token: tokenRef.current }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data: ResponseData = await res.json();
+    return data;
+  }, []);
 
   const { data, error } = useSWR(
     tokenRef.current ? `${loginUrl}/api/login/status` : null,
