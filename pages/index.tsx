@@ -50,15 +50,22 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`${competitionUrl}/api/brief`);
-  const data = await res.json();
-  return {
-    props: {
-      fallback: {
-        [`${competitionUrl}/api/brief`]: data,
+  try {
+    const res = await fetch(`${competitionUrl}/api/brief`);
+    const data = await res.json();
+    return {
+      props: {
+        fallback: {
+          [`${competitionUrl}/api/brief`]: data,
+        },
       },
-    },
-  };
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {},
+    };
+  }
 };
 
 export default Home;
