@@ -20,7 +20,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
 }) => {
   return (
     <SWRConfig value={{ fallback }}>
-      {/* <CustomHead /> */}
+      <CustomHead />
       <Navbar />
       <div className="bg" />
       <Slogan
