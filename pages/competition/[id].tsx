@@ -6,45 +6,48 @@
  * @Description: 比赛详情页
  */
 
-import { Layout, Menu } from 'antd'
-import CustomHead from 'components/common/CustomHead'
-import Loading from 'components/common/Loading'
-import Navbar from 'components/common/Navbar'
-import Detail from 'components/Competition/Detail'
-import useGetCompetitionList from 'hooks/services/useGetCompetitionList'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { BsFillMapFill } from 'react-icons/bs'
+import { Layout, Menu } from "antd";
+import CustomHead from "components/common/CustomHead";
+import Loading from "components/common/Loading";
+import Navbar from "components/common/Navbar";
+import Detail from "components/Competition/Detail";
+import useGetCompetitionList from "hooks/services/useGetCompetitionList";
+import { useRouter } from "next/router";
+import React from "react";
+import { BsFillMapFill } from "react-icons/bs";
 
 function Competition() {
-  const { list, loading } = useGetCompetitionList()
-  const router = useRouter()
+  const { list } = useGetCompetitionList();
+  const router = useRouter();
 
   return (
     <>
       <CustomHead />
       <Navbar />
-      <Layout style={{ height: 'calc(100vh - 65px)' }}>
-        <Layout.Sider theme='light' style={{ height: '100%' }}>
-          {list.length === 0
-            ? <Loading />
-            : (
-              <Menu
-                defaultSelectedKeys={[(router.query.id as string)]}
-                items={list.map(item => ({ label: item.name, key: item.id, icon: <BsFillMapFill color={'#1890ff'} /> }))}
-                onSelect={(info) => {
-                  router.push('/competition/' + info.key)
-                }}
-              />
-            )
-          }
+      <Layout style={{ height: "calc(100vh - 65px)" }}>
+        <Layout.Sider theme="light" style={{ height: "100%" }}>
+          {list.length === 0 ? (
+            <Loading />
+          ) : (
+            <Menu
+              defaultSelectedKeys={[router.query.id as string]}
+              items={list.map((item) => ({
+                label: item.name,
+                key: item.id,
+                icon: <BsFillMapFill color={"#1890ff"} />,
+              }))}
+              onSelect={(info) => {
+                router.push("/competition/" + info.key);
+              }}
+            />
+          )}
         </Layout.Sider>
         <Layout.Content>
           <Detail />
         </Layout.Content>
       </Layout>
     </>
-  )
+  );
 }
 
-export default Competition
+export default Competition;

@@ -16,8 +16,9 @@ type Response =
   | { success: true; competition: Competition.Competition }
   | { success: false; error: string };
 
-function useGetCompetitionDetail(id: string) {
+function useGetCompetitionDetail() {
   const router = useRouter();
+  const { id } = router.query;
 
   const getCompetitionDetail = useCallback(async (url: string) => {
     const res = await fetch(url, {

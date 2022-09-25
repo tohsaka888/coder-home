@@ -9,7 +9,6 @@
 import { Button, Tag } from 'antd'
 import Loading from 'components/common/Loading'
 import useGetCompetitionDetail from 'hooks/services/useGetCompetitionDetail'
-import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 import { BsTagFill } from 'react-icons/bs'
 import { Flex } from 'styles/index.style'
@@ -17,8 +16,7 @@ import { PartContainer } from './index.style'
 import moment from 'moment'
 
 function Detail() {
-  const { query } = useRouter()
-  const { competition } = useGetCompetitionDetail((query.id as string))
+  const { competition } = useGetCompetitionDetail()
 
   const status = useMemo(() => {
     if (competition) {

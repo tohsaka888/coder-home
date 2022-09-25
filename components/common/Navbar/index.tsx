@@ -28,7 +28,7 @@ const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
   const { Header } = Layout;
-  const { list, loading } = useGetCompetitionList();
+  const { list } = useGetCompetitionList();
   const router = useRouter();
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -77,11 +77,9 @@ function Navbar() {
               defaultSelectedKeys={[pathname.split("/")[1]]}
               mode={"horizontal"}
               onSelect={(info) => {
-                if (!loading) {
-                  if (info.key === "competition") {
-                    if (list) {
-                      router.push(`/competition/${list[0].id}`);
-                    }
+                if (info.key === "competition") {
+                  if (list.length !== 0) {
+                    router.push(`/competition/${list[0].id}`);
                   }
                 }
               }}
