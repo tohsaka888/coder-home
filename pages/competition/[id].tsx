@@ -26,7 +26,7 @@ function Competition() {
       <Navbar />
       <Layout style={{ height: 'calc(100vh - 65px)' }}>
         <Layout.Sider theme='light' style={{ height: '100%' }}>
-          {loading
+          {list.length === 0
             ? <Loading />
             : (
               <Menu
