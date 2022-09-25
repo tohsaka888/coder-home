@@ -41,7 +41,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
         cursorStyle={{ width: "16px", height: "5px" }}
       />
       <BackgroundContainer>
-        <LiveBackground />
+        {/* <LiveBackground /> */}
       </BackgroundContainer>
       <div className="layer" />
       <Loader />
