@@ -17,6 +17,12 @@ function useLoginOrRegister() {
   const { push } = useRouter();
   const login = useCallback(
     async (props: LoginProps) => {
+      if (props.type === "username") {
+        if (!props.username || !props.password) {
+          message.error("用户名或者密码不得为空");
+          return;
+        }
+      }
       try {
         const res = await fetch(
           `${loginUrl}/api/login/${
