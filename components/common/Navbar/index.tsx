@@ -79,7 +79,7 @@ function Navbar() {
               onSelect={(info) => {
                 if (info.key === "competition") {
                   if (list.length !== 0) {
-                    router.push(`/competition/${list[0].id}`);
+                    router.push(`/competition/632134dcf5dfb3655d9e6db4`);
                   }
                 }
               }}
