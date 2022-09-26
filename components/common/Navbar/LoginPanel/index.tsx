@@ -12,7 +12,7 @@ import { LoginModalShowContext } from "../context";
 import { NightFormContainer } from "../index.style";
 
 function LoginPanel() {
-  const { login } = useLoginOrRegister();
+  const { login, loading } = useLoginOrRegister();
   const { loginStatus } = useLoginStatus();
   const { authcode } = useAuthCode();
   const { mutate } = useSWRConfig();
@@ -131,6 +131,7 @@ function LoginPanel() {
         <Flex justifyContent="center">
           <Button
             type={"primary"}
+            loading={loading}
             style={{ width: "100%", margin: "16px 48px" }}
             size={"large"}
             onClick={async () => {
