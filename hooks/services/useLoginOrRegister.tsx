@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 15:15:02
+ * @LastEditTime: 2022-09-26 15:39:38
  * @Description: 登录相关接口
  */
 import { message } from "antd";
@@ -31,6 +31,10 @@ type VerifyEmailResponseData =
 
 type RegisterResponseData =
   | { success: true; isRegister: boolean }
+  | { success: false; error: string };
+
+type ForgetResponseData =
+  | { success: true; isReset: boolean }
   | { success: false; error: string };
 
 function useLoginOrRegister() {
@@ -170,7 +174,32 @@ function useLoginOrRegister() {
     []
   );
 
-  const forget = useCallback(() => {}, []);
+  const forget = useCallback(async (email: string, password: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${loginUrl}/api/forget`, {
+        mode: "cors",
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data: ForgetResponseData = await res.json();
+      setLoading(false);
+      if (data.success) {
+        return data.isReset;
+      } else {
+        message.error(data.error);
+        push("/error/" + encodeURIComponent(data.error));
+      }
+    } catch (error) {
+      const errMsg = (error as Error).message;
+      setLoading(false);
+      message.error(errMsg);
+      push("/error/" + encodeURIComponent(errMsg));
+    }
+  }, []);
 
   return { login, register, forget, loading, sendEmail, verifyEmail };
 }
