@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 10:57:19
+ * @LastEditTime: 2022-09-26 13:12:17
  * @Description: 登录相关接口
  */
 import { message } from "antd";
@@ -61,14 +61,14 @@ function useLoginOrRegister() {
           message.success("登录成功");
         } else {
           message.error(data.error);
-          push("/error");
+          push("/error/" + data.error);
         }
         setLoading(false);
       } catch (error) {
         const errorMsg = (error as Error).message;
         message.error(errorMsg);
         setLoading(false);
-        push("/error");
+        push("/error/" + errorMsg);
       }
     },
     [mutate, push]

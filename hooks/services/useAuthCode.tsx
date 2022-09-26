@@ -1,3 +1,10 @@
+/*
+ * @Author: tohsaka888
+ * @Date: 2022-09-26 08:23:52
+ * @LastEditors: tohsaka888
+ * @LastEditTime: 2022-09-26 13:10:56
+ * @Description: 获取验证码
+ */
 import { message } from "antd";
 import { baseUrl } from "config/baseUrl";
 import { useRouter } from "next/router";
@@ -22,7 +29,7 @@ function useAuthCode() {
   const authcode = useMemo(() => {
     if (error) {
       message.error(error.message);
-      push("/error");
+      push("/error/" + error.message);
     }
 
     if (data) {

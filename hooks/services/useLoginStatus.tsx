@@ -49,7 +49,7 @@ function useLoginStatus() {
     if (error) {
       message.error(error.message);
       removeToken();
-      push("/error");
+      push("/error/" + error.message);
     }
 
     if (data) {
