@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 13:12:17
+ * @LastEditTime: 2022-09-26 15:15:02
  * @Description: 登录相关接口
  */
 import { message } from "antd";
@@ -19,6 +19,18 @@ type LoginProps =
 
 type LoginResponseData =
   | { success: true; canLogin: boolean; token: string }
+  | { success: false; error: string };
+
+type GetEmailResponseData =
+  | { success: true; code: string }
+  | { success: false; error: string };
+
+type VerifyEmailResponseData =
+  | { success: true; canRegister: boolean }
+  | { success: false; error: string };
+
+type RegisterResponseData =
+  | { success: true; isRegister: boolean }
   | { success: false; error: string };
 
 function useLoginOrRegister() {
@@ -61,24 +73,106 @@ function useLoginOrRegister() {
           message.success("登录成功");
         } else {
           message.error(data.error);
-          push("/error/" + data.error);
+          push("/error/" + encodeURIComponent(data.error));
         }
         setLoading(false);
       } catch (error) {
         const errorMsg = (error as Error).message;
         message.error(errorMsg);
         setLoading(false);
-        push("/error/" + errorMsg);
+        push("/error/" + encodeURIComponent(errorMsg));
       }
     },
     [mutate, push]
   );
 
-  const register = useCallback(() => {}, []);
+  const sendEmail = useCallback(async (email: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${loginUrl}/api/authcode/get`, {
+        mode: "cors",
+        body: JSON.stringify({ email }),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data: GetEmailResponseData = await res.json();
+      setLoading(false);
+      if (data.success) {
+        return data.code;
+      } else {
+        message.error(data.error);
+        push("/error/" + encodeURIComponent(data.error));
+      }
+    } catch (error) {
+      const errMsg = (error as Error).message;
+      setLoading(false);
+      message.error(errMsg);
+      push("/error/" + encodeURIComponent(errMsg));
+    }
+  }, []);
+
+  const verifyEmail = useCallback(async (email: string, code: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${loginUrl}/api/authcode/verify`, {
+        mode: "cors",
+        method: "POST",
+        body: JSON.stringify({ email, code }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data: VerifyEmailResponseData = await res.json();
+      setLoading(false);
+      if (data.success) {
+        return data.canRegister;
+      } else {
+        message.error(data.error);
+        push("/error/" + encodeURIComponent(data.error));
+      }
+    } catch (error) {
+      const errMsg = (error as Error).message;
+      setLoading(false);
+      message.error(errMsg);
+      push("/error/" + encodeURIComponent(errMsg));
+    }
+  }, []);
+
+  const register = useCallback(
+    async (email: string, password: string, username: string) => {
+      setLoading(true);
+      try {
+        const res = await fetch(`${loginUrl}/api/register`, {
+          mode: "cors",
+          method: "POST",
+          body: JSON.stringify({ email, password, username }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data: RegisterResponseData = await res.json();
+        setLoading(false);
+        if (data.success) {
+          return data.isRegister;
+        } else {
+          message.error(data.error);
+          push("/error/" + encodeURIComponent(data.error));
+        }
+      } catch (error) {
+        const errMsg = (error as Error).message;
+        setLoading(false);
+        message.error(errMsg);
+        push("/error/" + encodeURIComponent(errMsg));
+      }
+    },
+    []
+  );
 
   const forget = useCallback(() => {}, []);
 
-  return { login, register, forget, loading };
+  return { login, register, forget, loading, sendEmail, verifyEmail };
 }
 
 export default useLoginOrRegister;

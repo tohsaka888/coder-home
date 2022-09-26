@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 13:19:11
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 13:11:58
+ * @LastEditTime: 2022-09-26 14:34:41
  * @Description: 获取比赛列表
  */
 
@@ -49,7 +49,7 @@ function useGetCompetitionList() {
   }, [data, error])
 
   if (error) {
-    router.push('/error/' + error.message)
+    router.push('/error/' + encodeURIComponent(error.message))
   }
 
   return { list, error, loading: !data && !error }

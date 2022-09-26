@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 13:10:56
+ * @LastEditTime: 2022-09-26 14:33:54
  * @Description: 获取验证码
  */
 import { message } from "antd";
@@ -29,7 +29,7 @@ function useAuthCode() {
   const authcode = useMemo(() => {
     if (error) {
       message.error(error.message);
-      push("/error/" + error.message);
+      push("/error/" + encodeURIComponent(error.message));
     }
 
     if (data) {
