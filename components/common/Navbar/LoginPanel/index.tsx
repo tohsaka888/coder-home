@@ -147,7 +147,13 @@ function LoginPanel() {
           >
             {account.type === "username" ? "邮箱登录" : "用户名登录"}
           </Button>
-          <Button type="link" size={"large"}>
+          <Button
+            type="link"
+            size={"large"}
+            onClick={() => {
+              setModal({ type: "forget", visible: true });
+            }}
+          >
             找回密码
           </Button>
         </Flex>
