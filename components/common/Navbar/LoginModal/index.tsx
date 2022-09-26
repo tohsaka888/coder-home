@@ -2,12 +2,12 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:59:26
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 08:48:57
+ * @LastEditTime: 2022-09-26 12:56:45
  * @Description: login modal
  */
 
 import React, { useContext } from "react";
-import { LoginModalShowContext } from "../context";
+import { LoginModalShowContext } from "context";
 import { AnimatePresence, motion } from "framer-motion";
 import ReactDOM from "react-dom";
 import { BsFillXCircleFill } from "react-icons/bs";
@@ -22,11 +22,11 @@ type Props = {
 };
 
 function LoginModal({ width, height, title, children }: Props) {
-  const { visible, setVisible } = useContext(LoginModalShowContext)!;
+  const { modal, setModal } = useContext(LoginModalShowContext)!;
 
   return ReactDOM.createPortal(
     <AnimatePresence>
-      {visible && (
+      {modal.visible && (
         <>
           <motion.div
             key="mask"
@@ -38,7 +38,9 @@ function LoginModal({ width, height, title, children }: Props) {
               top: "0px",
               left: "0px",
             }}
-            onClick={() => setVisible(false)}
+            onClick={() => {
+              setModal({ ...modal, visible: false });
+            }}
             animate={{
               backgroundColor: "#3d3d3d4c",
               width: "100vw",
@@ -108,7 +110,7 @@ function LoginModal({ width, height, title, children }: Props) {
                 size={30}
                 color={"#fff"}
                 onClick={() => {
-                  setVisible(false);
+                  setModal({ ...modal, visible: false });
                 }}
               />
             </motion.div>

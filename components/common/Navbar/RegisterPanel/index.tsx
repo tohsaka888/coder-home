@@ -13,7 +13,7 @@ type AccountProps =
   | ({ type: "username" } & { username: string; password: string })
   | ({ type: "email" } & { email: string; password: string });
 
-function LoginPanel() {
+function RegisterPanel() {
   const { login, loading } = useLoginOrRegister();
   const { authcode } = useAuthCode();
   const { mutate } = useSWRConfig();
@@ -170,4 +170,4 @@ function LoginPanel() {
   );
 }
 
-export default LoginPanel;
+export default RegisterPanel;

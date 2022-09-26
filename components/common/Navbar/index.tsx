@@ -2,19 +2,24 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 11:32:26
+ * @LastEditTime: 2022-09-26 12:54:57
  * @Description: Navbar
  */
 
 import React, { CSSProperties, useMemo, useState } from "react";
 import { Button, Layout, Menu } from "antd";
 import { useRouter } from "next/router";
-import { BsGithub, BsTrophyFill, BsTwitch } from "react-icons/bs";
+import {
+  BsGithub,
+  BsTrophyFill,
+  BsTwitch,
+  BsPersonCircle,
+} from "react-icons/bs";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
 import useGetCompetitionList from "hooks/services/useGetCompetitionList";
 import { Flex } from "styles/index.style";
 import Logo from "./Logo";
-import { LoginModalShowContext } from "./context";
+import { LoginModalShowContext } from "context";
 import dynamic from "next/dynamic";
 import LoginPanel from "./LoginPanel";
 import useLoginStatus from "hooks/services/useLoginStatus";
@@ -28,7 +33,10 @@ function Navbar() {
   const { Header } = Layout;
   const { list } = useGetCompetitionList();
   const router = useRouter();
-  const [visible, setVisible] = useState<boolean>(false);
+  const [modal, setModal] = useState<HomePage.ModalProps>({
+    type: "login",
+    visible: false,
+  });
   const { loginStatus } = useLoginStatus();
   const { removeToken } = useToken();
   const { mutate } = useSWRConfig();
@@ -66,7 +74,7 @@ function Navbar() {
   }, []);
 
   return (
-    <LoginModalShowContext.Provider value={{ visible, setVisible }}>
+    <LoginModalShowContext.Provider value={{ modal, setModal }}>
       <Header style={style}>
         <Flex alignItems="center" justifyContent="space-between">
           <Flex alignItems="center">
@@ -96,12 +104,23 @@ function Navbar() {
             />
             {!loginStatus ? (
               <>
+                <BsPersonCircle
+                  size={26}
+                  style={{
+                    marginRight: "16px",
+                    cursor: "pointer",
+                    color: "#fff",
+                  }}
+                />
                 <Button
                   type="primary"
                   shape={"round"}
                   style={{ width: "80px" }}
                   onClick={() => {
-                    setVisible(true);
+                    setModal({
+                      type: "login",
+                      visible: true,
+                    });
                   }}
                 >
                   登录
@@ -117,7 +136,7 @@ function Navbar() {
                   style={{ width: "100px", marginLeft: "16px" }}
                   onClick={() => {
                     removeToken();
-                    mutate(`${loginUrl}/api/login/status`)
+                    mutate(`${loginUrl}/api/login/status`);
                   }}
                 >
                   退出登录
