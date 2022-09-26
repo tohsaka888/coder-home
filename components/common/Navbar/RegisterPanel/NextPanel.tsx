@@ -2,16 +2,17 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 13:38:21
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 15:22:32
+ * @LastEditTime: 2022-09-26 15:46:39
  * @Description: 注册面板
  */
 
 import { Button, Form, message } from "antd";
 import NightInput from "components/common/NightInput";
 import { baseUrl } from "config/baseUrl";
+import { LoginModalShowContext } from "context";
 import useAuthCode from "hooks/services/useAuthCode";
 import useLoginOrRegister from "hooks/services/useLoginOrRegister";
-import React, { useMemo, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { Flex } from "styles/index.style";
 import { useSWRConfig } from "swr";
 
@@ -28,7 +29,9 @@ function NextPanel({ email }: Props) {
   const [password, setPassword] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [username, setUsername] = useState<string>("");
-  const { loading, register } = useLoginOrRegister();
+  const { loading, register, forget } = useLoginOrRegister();
+  const { modal, setModal } = useContext(LoginModalShowContext)!;
+
   const codeStatus = useMemo(() => {
     if (authcode) {
       if (code) {
@@ -67,18 +70,20 @@ function NextPanel({ email }: Props) {
         >
           <NightInput disabled />
         </Form.Item>
-        <Form.Item
-          label={"用户名"}
-          name={"username"}
-          hasFeedback
-          validateStatus={username ? "success" : "validating"}
-          rules={[{ required: true, message: "用户名不得为空" }]}
-        >
-          <NightInput
-            placeholder={"请输入用户名"}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Item>
+        {modal.type === "register" && (
+          <Form.Item
+            label={"用户名"}
+            name={"username"}
+            hasFeedback
+            validateStatus={username ? "success" : "validating"}
+            rules={[{ required: true, message: "用户名不得为空" }]}
+          >
+            <NightInput
+              placeholder={"请输入用户名"}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </Form.Item>
+        )}
         <Form.Item
           label={"密码"}
           name={"password"}
@@ -150,15 +155,25 @@ function NextPanel({ email }: Props) {
           size={"large"}
           onClick={async () => {
             await form.validateFields();
-            const result = await register(email, password, username);
-            if (result) {
-              message.success("注册成功");
+            if (modal.type === "register") {
+              const result = await register(email, password, username);
+              if (result) {
+                message.success("注册成功");
+              } else {
+                message.error("注册失败");
+              }
             } else {
-              message.error("注册失败");
+              const result = await forget(email, password);
+              if (result) {
+                message.success("重置成功");
+              } else {
+                message.error("重置失败");
+              }
             }
+            setModal({ ...modal, visible: false });
           }}
         >
-          注册
+          {modal.type === "forget" ? "重置" : "注册"}
         </Button>
       </Flex>
     </>
