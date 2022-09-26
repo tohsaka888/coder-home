@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 16:45:46
+ * @LastEditTime: 2022-09-26 17:02:31
  * @Description: 比赛详情
  */
 
@@ -12,10 +12,11 @@ import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
 import React, { useMemo } from "react";
 import { BsTagFill } from "react-icons/bs";
 import { Flex } from "styles/index.style";
-import { PartContainer } from "./index.style";
+import { Container, PartContainer } from "./index.style";
 import moment from "moment";
 import useIsSignUp from "hooks/services/useIsSignUp";
 import { useRouter } from "next/router";
+import Banner from "./Banner";
 
 function Detail() {
   const { query } = useRouter();
@@ -41,8 +42,8 @@ function Detail() {
   return (
     <>
       {competition ? (
-        <>
-          <PartContainer>
+        <Container>
+          <PartContainer style={{ position: "sticky", top: "0px" }}>
             <Flex alignItems="center" justifyContent="space-between">
               <Flex alignItems="center">
                 <BsTagFill style={{ marginRight: "8px" }} size={20} />
@@ -69,12 +70,14 @@ function Detail() {
                   disabled={status !== "进行中"}
                   danger={isSignUp}
                 >
-                  {isSignUp ? '取消报名' : '报名比赛'}
+                  {isSignUp ? "取消报名" : "报名比赛"}
                 </Button>
               </Flex>
             </Flex>
           </PartContainer>
-        </>
+
+          <Banner />
+        </Container>
       ) : (
         <Loading />
       )}
