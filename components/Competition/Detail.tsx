@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 17:02:31
+ * @LastEditTime: 2022-09-26 17:28:02
  * @Description: 比赛详情
  */
 
@@ -15,11 +15,9 @@ import { Flex } from "styles/index.style";
 import { Container, PartContainer } from "./index.style";
 import moment from "moment";
 import useIsSignUp from "hooks/services/useIsSignUp";
-import { useRouter } from "next/router";
 import Banner from "./Banner";
 
 function Detail() {
-  const { query } = useRouter();
   const { competition } = useGetCompetitionDetail();
   const { isSignUp } = useIsSignUp();
 
@@ -76,7 +74,16 @@ function Detail() {
             </Flex>
           </PartContainer>
 
-          <Banner />
+          <Flex>
+            <Banner />
+            <PartContainer
+              style={{
+                padding: "8px",
+                margin: "8px",
+                marginLeft: "0px",
+              }}
+            />
+          </Flex>
         </Container>
       ) : (
         <Loading />
