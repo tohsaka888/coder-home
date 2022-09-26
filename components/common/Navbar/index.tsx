@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 17:18:55
+ * @LastEditTime: 2022-09-26 08:33:58
  * @Description: Navbar
  */
 
@@ -74,7 +74,7 @@ function Navbar() {
               theme="dark"
               style={{ background: "transparent" }}
               items={items}
-              defaultSelectedKeys={[]}
+              defaultSelectedKeys={[pathname.split("/")[1]]}
               mode={"horizontal"}
               onSelect={(info) => {
                 if (info.key === "competition") {
@@ -106,9 +106,9 @@ function Navbar() {
           </Flex>
         </Flex>
       </Header>
-      <LoginModal width={600} height={390} title={"Login"}>
+      {/* <LoginModal width={600} height={390} title={"Login"}>
         <LoginPanel />
-      </LoginModal>
+      </LoginModal> */}
     </LoginModalShowContext.Provider>
   );
 }
