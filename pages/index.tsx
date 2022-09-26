@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-16 13:40:07
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 14:00:40
+ * @LastEditTime: 2022-09-26 08:28:11
  * @Description: HomePage
  */
 import { Loader } from "@react-three/drei";
@@ -22,7 +22,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
     <SWRConfig value={{ fallback }}>
       <CustomHead />
       <Navbar />
-      <div className="bg" />
+      {/* <div className="bg" />
       <Slogan
         title={"常州工学院 程序员之家"}
         locale={"zh"}
@@ -44,7 +44,7 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
         <LiveBackground />
       </BackgroundContainer>
       <div className="layer" />
-      <Loader />
+      <Loader /> */}
     </SWRConfig>
   );
 };
