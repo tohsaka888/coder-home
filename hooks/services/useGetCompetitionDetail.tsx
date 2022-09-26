@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 13:19:33
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 15:19:47
+ * @LastEditTime: 2022-09-26 14:34:11
  * @Description: 请填写简介
  */
 
@@ -36,7 +36,7 @@ function useGetCompetitionDetail() {
   const competition = useMemo(() => {
     if (error) {
       message.error(error.message);
-      router.push("/error");
+      router.push("/error/" + encodeURIComponent(error.message));
       return;
     }
     if (data) {
@@ -44,7 +44,7 @@ function useGetCompetitionDetail() {
         return data.competition;
       } else {
         message.error(data.error);
-        router.push("/error");
+        router.push("/error/" + encodeURIComponent(data.error));
         return;
       }
     }

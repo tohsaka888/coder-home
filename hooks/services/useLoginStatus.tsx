@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 11:33:14
+ * @LastEditTime: 2022-09-26 14:36:13
  * @Description: 获取登录状态
  */
 import { message } from "antd";
@@ -49,7 +49,7 @@ function useLoginStatus() {
     if (error) {
       message.error(error.message);
       removeToken();
-      push("/error");
+      push("/error/" + encodeURIComponent(error.message));
     }
 
     if (data) {
