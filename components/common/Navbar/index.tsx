@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 08:41:39
+ * @LastEditTime: 2022-09-26 11:32:26
  * @Description: Navbar
  */
 
@@ -17,6 +17,11 @@ import Logo from "./Logo";
 import { LoginModalShowContext } from "./context";
 import dynamic from "next/dynamic";
 import LoginPanel from "./LoginPanel";
+import useLoginStatus from "hooks/services/useLoginStatus";
+import UserAvatar from "../UserAvatar";
+import useToken from "hooks/useToken";
+import { useSWRConfig } from "swr";
+import { loginUrl } from "config/baseUrl";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -24,22 +29,25 @@ function Navbar() {
   const { list } = useGetCompetitionList();
   const router = useRouter();
   const [visible, setVisible] = useState<boolean>(false);
+  const { loginStatus } = useLoginStatus();
+  const { removeToken } = useToken();
+  const { mutate } = useSWRConfig();
 
   const pathname = router.pathname;
 
   const style: CSSProperties = useMemo(() => {
     return pathname === "/"
       ? {
-        color: "#fff",
-        background: "transparent",
-        position: "fixed",
-        top: "0px",
-        width: "100vw",
-        zIndex: 999,
-      }
+          color: "#fff",
+          background: "transparent",
+          position: "fixed",
+          top: "0px",
+          width: "100vw",
+          zIndex: 999,
+        }
       : {
-        background: undefined,
-      };
+          background: undefined,
+        };
   }, [pathname]);
 
   const items: ItemType[] = useMemo(() => {
@@ -72,7 +80,7 @@ function Navbar() {
               onSelect={(info) => {
                 if (info.key === "competition") {
                   if (list.length !== 0) {
-                    router.push(`/competition/632134dcf5dfb3655d9e6db4`);
+                    router.push(`/competition/${list[0].id}`);
                   }
                 }
               }}
@@ -81,21 +89,41 @@ function Navbar() {
           <Flex alignItems="center">
             <BsGithub
               size={25}
-              style={{ marginRight: "16px", cursor: "pointer", color: '#fff' }}
+              style={{ marginRight: "16px", cursor: "pointer", color: "#fff" }}
               onClick={() =>
                 router.push("https://github.com/tohsaka888/coder-home")
               }
             />
-            <Button
-              type="primary"
-              shape={"round"}
-              style={{ width: "80px" }}
-              onClick={() => {
-                setVisible(true);
-              }}
-            >
-              登录
-            </Button>
+            {!loginStatus ? (
+              <>
+                <Button
+                  type="primary"
+                  shape={"round"}
+                  style={{ width: "80px" }}
+                  onClick={() => {
+                    setVisible(true);
+                  }}
+                >
+                  登录
+                </Button>
+              </>
+            ) : (
+              <>
+                <UserAvatar username={loginStatus.username} />
+                <Button
+                  danger
+                  type="primary"
+                  shape={"round"}
+                  style={{ width: "100px", marginLeft: "16px" }}
+                  onClick={() => {
+                    removeToken();
+                    mutate(`${loginUrl}/api/login/status`)
+                  }}
+                >
+                  退出登录
+                </Button>
+              </>
+            )}
           </Flex>
         </Flex>
       </Header>
