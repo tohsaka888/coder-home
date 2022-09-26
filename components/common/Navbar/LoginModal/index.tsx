@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:59:26
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 17:27:01
+ * @LastEditTime: 2022-09-26 08:48:57
  * @Description: login modal
  */
 
@@ -13,7 +13,6 @@ import ReactDOM from "react-dom";
 import { BsFillXCircleFill } from "react-icons/bs";
 import { ImageContainer, Title } from "./index.style";
 import Image from "next/image";
-// import { Mask } from './index.style'
 
 type Props = {
   width: number;
@@ -29,9 +28,6 @@ function LoginModal({ width, height, title, children }: Props) {
     <AnimatePresence>
       {visible && (
         <>
-          {/* <Mask onClick={() => {
-            setVisible(false)
-          }} /> */}
           <motion.div
             key="mask"
             initial={{
