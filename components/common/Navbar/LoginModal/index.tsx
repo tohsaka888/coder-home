@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:59:26
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 12:56:45
+ * @LastEditTime: 2022-09-26 13:36:24
  * @Description: login modal
  */
 
@@ -54,7 +54,7 @@ function LoginModal({ width, height, title, children }: Props) {
             key={"modal"}
             initial={{
               width: "0px",
-              height: "0px",
+              height: "max-content",
               position: "fixed",
               left: "100%",
               marginLeft: "0px",
