@@ -1,7 +1,16 @@
+/*
+ * @Author: tohsaka888
+ * @Date: 2022-09-26 08:23:52
+ * @LastEditors: tohsaka888
+ * @LastEditTime: 2022-09-26 10:57:19
+ * @Description: 登录相关接口
+ */
 import { message } from "antd";
 import { loginUrl } from "config/baseUrl";
+import useToken from "hooks/useToken";
 import { useRouter } from "next/router";
 import React, { useCallback } from "react";
+import { useState } from "react";
 import { useSWRConfig } from "swr";
 
 type LoginProps =
@@ -15,11 +24,15 @@ type LoginResponseData =
 function useLoginOrRegister() {
   const { mutate } = useSWRConfig();
   const { push } = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+  const { dispatchToken } = useToken();
   const login = useCallback(
     async (props: LoginProps) => {
+      setLoading(true);
       if (props.type === "username") {
         if (!props.username || !props.password) {
           message.error("用户名或者密码不得为空");
+          setLoading(false);
           return;
         }
       }
@@ -43,16 +56,18 @@ function useLoginOrRegister() {
         );
         const data: LoginResponseData = await res.json();
         if (data.success) {
-          localStorage.setItem("token", data.token);
+          dispatchToken(data.token);
           mutate(`${loginUrl}/api/login/status`);
           message.success("登录成功");
         } else {
           message.error(data.error);
           push("/error");
         }
+        setLoading(false);
       } catch (error) {
         const errorMsg = (error as Error).message;
         message.error(errorMsg);
+        setLoading(false);
         push("/error");
       }
     },
@@ -63,7 +78,7 @@ function useLoginOrRegister() {
 
   const forget = useCallback(() => {}, []);
 
-  return { login, register, forget };
+  return { login, register, forget, loading };
 }
 
 export default useLoginOrRegister;
