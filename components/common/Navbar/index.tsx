@@ -74,7 +74,7 @@ function Navbar() {
               theme="dark"
               style={{ background: "transparent" }}
               items={items}
-              defaultSelectedKeys={[pathname.split("/")[1]]}
+              defaultSelectedKeys={[]}
               mode={"horizontal"}
               onSelect={(info) => {
                 if (info.key === "competition") {
