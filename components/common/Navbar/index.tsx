@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 12:54:57
+ * @LastEditTime: 2022-09-26 13:35:42
  * @Description: Navbar
  */
 
@@ -27,6 +27,7 @@ import UserAvatar from "../UserAvatar";
 import useToken from "hooks/useToken";
 import { useSWRConfig } from "swr";
 import { loginUrl } from "config/baseUrl";
+import RegisterPanel from "./RegisterPanel";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -111,6 +112,12 @@ function Navbar() {
                     cursor: "pointer",
                     color: "#fff",
                   }}
+                  onClick={() => {
+                    setModal({
+                      type: "register",
+                      visible: true,
+                    });
+                  }}
                 />
                 <Button
                   type="primary"
@@ -146,8 +153,8 @@ function Navbar() {
           </Flex>
         </Flex>
       </Header>
-      <LoginModal width={600} height={390} title={"Login"}>
-        <LoginPanel />
+      <LoginModal width={600} title={modal.type}>
+        {modal.type === "login" ? <LoginPanel /> : <RegisterPanel />}
       </LoginModal>
     </LoginModalShowContext.Provider>
   );
