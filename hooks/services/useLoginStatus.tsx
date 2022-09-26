@@ -1,7 +1,15 @@
+/*
+ * @Author: tohsaka888
+ * @Date: 2022-09-26 08:23:52
+ * @LastEditors: tohsaka888
+ * @LastEditTime: 2022-09-26 11:33:14
+ * @Description: 获取登录状态
+ */
 import { message } from "antd";
 import { loginUrl } from "config/baseUrl";
+import useToken from "hooks/useToken";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useMemo } from "react";
 import useSWR from "swr";
 
 type ResponseData =
@@ -14,33 +22,33 @@ type ResponseData =
 
 function useLoginStatus() {
   const { push } = useRouter();
-  const tokenRef = useRef<string | null>(null);
+  const { removeToken, token } = useToken();
 
-  useEffect(() => {
-    tokenRef.current = localStorage.getItem("token");
-  }, []);
-
-  const getLoginStatus = useCallback(async (url: string) => {
-    const res = await fetch(url, {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify({ token: tokenRef.current }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: ResponseData = await res.json();
-    return data;
-  }, []);
+  const getLoginStatus = useCallback(
+    async (url: string) => {
+      const res = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify({ token: token }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data: ResponseData = await res.json();
+      return data;
+    },
+    [token]
+  );
 
   const { data, error } = useSWR(
-    tokenRef.current ? `${loginUrl}/api/login/status` : null,
+    token ? `${loginUrl}/api/login/status` : null,
     getLoginStatus
   );
 
   const loginStatus = useMemo(() => {
     if (error) {
       message.error(error.message);
+      removeToken();
       push("/error");
     }
 
@@ -51,8 +59,7 @@ function useLoginStatus() {
           email: data.result.email,
         };
       } else {
-        message.error(data.error);
-        push("/error");
+        return;
       }
     }
   }, [data, error, push]);
