@@ -17,13 +17,13 @@ function Banner() {
   return (
     <PartContainer
       style={{
-        width: "500px",
         padding: "8px",
         margin: "8px",
         paddingBottom: "0px",
+        flex: 0,
       }}
     >
-      <Carousel autoplay>
+      <Carousel autoplay style={{ width: "500px" }}>
         {competition?.banners.map((banner) => {
           return (
             <Image
