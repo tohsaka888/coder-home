@@ -2,12 +2,12 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 08:33:58
+ * @LastEditTime: 2022-09-26 08:41:39
  * @Description: Navbar
  */
 
 import React, { CSSProperties, useMemo, useState } from "react";
-import { Button, Form, Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
 import { useRouter } from "next/router";
 import { BsGithub, BsTrophyFill, BsTwitch } from "react-icons/bs";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
@@ -16,13 +16,6 @@ import { Flex } from "styles/index.style";
 import Logo from "./Logo";
 import { LoginModalShowContext } from "./context";
 import dynamic from "next/dynamic";
-import NightInput from "../NightInput";
-import { NightFormContainer } from "./index.style";
-import useLoginOrRegister from "hooks/services/useLoginOrRegister";
-import useLoginStatus from "hooks/services/useLoginStatus";
-import useAuthCode from "hooks/services/useAuthCode";
-import { useSWRConfig } from "swr";
-import { baseUrl } from "config/baseUrl";
 import LoginPanel from "./LoginPanel";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
@@ -37,16 +30,16 @@ function Navbar() {
   const style: CSSProperties = useMemo(() => {
     return pathname === "/"
       ? {
-          color: "#fff",
-          background: "transparent",
-          position: "fixed",
-          top: "0px",
-          width: "100vw",
-          zIndex: 999,
-        }
+        color: "#fff",
+        background: "transparent",
+        position: "fixed",
+        top: "0px",
+        width: "100vw",
+        zIndex: 999,
+      }
       : {
-          background: undefined,
-        };
+        background: undefined,
+      };
   }, [pathname]);
 
   const items: ItemType[] = useMemo(() => {
@@ -88,7 +81,7 @@ function Navbar() {
           <Flex alignItems="center">
             <BsGithub
               size={25}
-              style={{ marginRight: "16px", cursor: "pointer" }}
+              style={{ marginRight: "16px", cursor: "pointer", color: '#fff' }}
               onClick={() =>
                 router.push("https://github.com/tohsaka888/coder-home")
               }
@@ -106,9 +99,9 @@ function Navbar() {
           </Flex>
         </Flex>
       </Header>
-      {/* <LoginModal width={600} height={390} title={"Login"}>
+      <LoginModal width={600} height={390} title={"Login"}>
         <LoginPanel />
-      </LoginModal> */}
+      </LoginModal>
     </LoginModalShowContext.Provider>
   );
 }
