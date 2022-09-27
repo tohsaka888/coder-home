@@ -13,7 +13,7 @@ specifiers:
   antd: 4.23.2
   eslint: 8.24.0
   eslint-config-next: 12.3.0
-  framer-motion: 7.3.6
+  framer-motion: 7.4.0
   moment: 2.29.4
   next: 12.3.0
   next-transpile-modules: 9.0.0
@@ -34,7 +34,7 @@ dependencies:
   '@react-three/drei': 9.32.1_vaa6rxjdfgseriicqray5aarwu
   '@react-three/fiber': 8.8.3_ww22p6cticflcq7fk2rysgxj34
   antd: 4.23.2_biqbaboplfbrettd7655fr4n2y
-  framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -2021,8 +2021,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion/7.3.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-en8mLpDv6IcieZo54acHg56HSLpOSryRLZtMOd1Sj1s7hBbUTWnJsv68CWaHI2ysPKcbH/olGfAhRh4yrJn5tw==}
+  /framer-motion/7.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-tcvL5L1cASYjIeBG6mQHhzfndm7MdyHjOwqIdOzOetIVa1yUqeYMufAoljgqg69XFgsgZet+c4iuSuFF+Vgbjg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
