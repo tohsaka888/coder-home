@@ -3,28 +3,27 @@ import NightInput from "components/common/NightInput";
 import { baseUrl } from "config/baseUrl";
 import useAuthCode from "hooks/services/useAuthCode";
 import useLoginOrRegister from "hooks/services/useLoginOrRegister";
-import useLoginStatus from "hooks/services/useLoginStatus";
-import authcode from "pages/api/authcode";
 import React, { useContext, useMemo, useState } from "react";
 import { Flex } from "styles/index.style";
-import { mutate, useSWRConfig } from "swr";
-import { LoginModalShowContext } from "../context";
+import { useSWRConfig } from "swr";
+import { LoginModalShowContext } from "context";
 import { NightFormContainer } from "../index.style";
 
+type AccountProps =
+  | ({ type: "username" } & { username: string; password: string })
+  | ({ type: "email" } & { email: string; password: string });
+
 function LoginPanel() {
-  const { login } = useLoginOrRegister();
-  const { loginStatus } = useLoginStatus();
+  const { login, loading } = useLoginOrRegister();
   const { authcode } = useAuthCode();
   const { mutate } = useSWRConfig();
-  const [account, setAccount] = useState<{
-    username: string;
-    password: string;
-  }>({
+  const [account, setAccount] = useState<AccountProps>({
+    type: "username",
     username: "",
     password: "",
   });
   const [code, setCode] = useState<string>("");
-  const { setVisible } = useContext(LoginModalShowContext)!;
+  const { setModal } = useContext(LoginModalShowContext)!;
 
   const codeStatus = useMemo(() => {
     if (authcode) {
@@ -55,17 +54,31 @@ function LoginPanel() {
           requiredMark={"optional"}
         >
           <Form.Item
-            label={"用户名"}
-            name={"username"}
+            label={account.type === "username" ? "用户名" : "邮箱"}
+            name={account.type}
             hasFeedback
             rules={[{ required: true, message: "用户名不得为空" }]}
-            validateStatus={account.username ? "success" : "validating"}
+            validateStatus={
+              account.type === "username"
+                ? account.username
+                  ? "success"
+                  : "validating"
+                : account.email
+                ? "success"
+                : "validating"
+            }
           >
             <NightInput
-              key={"username"}
-              placeholder={"请输入用户名"}
+              key={account.type}
+              placeholder={
+                account.type === "username" ? "请输入用户名" : "请输入邮箱"
+              }
               onChange={(e) => {
-                setAccount({ ...account, username: e.target.value });
+                if (account.type === "username") {
+                  setAccount({ ...account, username: e.target.value });
+                } else {
+                  setAccount({ ...account, email: e.target.value });
+                }
               }}
             />
           </Form.Item>
@@ -121,21 +134,38 @@ function LoginPanel() {
           justifyContent="space-between"
           style={{ margin: "0px 36px" }}
         >
-          <Button type="link" size={"large"}>
-            邮箱登录
+          <Button
+            type="link"
+            size={"large"}
+            onClick={() => {
+              if (account.type === "username") {
+                setAccount({ type: "email", email: "", password: "" });
+              } else {
+                setAccount({ type: "username", password: "", username: "" });
+              }
+            }}
+          >
+            {account.type === "username" ? "邮箱登录" : "用户名登录"}
           </Button>
-          <Button type="link" size={"large"}>
+          <Button
+            type="link"
+            size={"large"}
+            onClick={() => {
+              setModal({ type: "forget", visible: true });
+            }}
+          >
             找回密码
           </Button>
         </Flex>
         <Flex justifyContent="center">
           <Button
             type={"primary"}
+            loading={loading}
             style={{ width: "100%", margin: "16px 48px" }}
             size={"large"}
             onClick={async () => {
-              await login({ ...account, type: "username" });
-              setVisible(false);
+              await login({ ...account });
+              setModal((model) => ({ ...model, visible: false }));
             }}
           >
             登录

@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 export const LogoContainer = styled.div`
   background: linear-gradient(30deg, #c850c0, #ffcc70);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.8rem;

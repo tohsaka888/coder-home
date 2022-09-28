@@ -2,18 +2,17 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:59:26
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 17:27:01
+ * @LastEditTime: 2022-09-26 13:36:24
  * @Description: login modal
  */
 
 import React, { useContext } from "react";
-import { LoginModalShowContext } from "../context";
+import { LoginModalShowContext } from "context";
 import { AnimatePresence, motion } from "framer-motion";
 import ReactDOM from "react-dom";
 import { BsFillXCircleFill } from "react-icons/bs";
 import { ImageContainer, Title } from "./index.style";
 import Image from "next/image";
-// import { Mask } from './index.style'
 
 type Props = {
   width: number;
@@ -23,15 +22,12 @@ type Props = {
 };
 
 function LoginModal({ width, height, title, children }: Props) {
-  const { visible, setVisible } = useContext(LoginModalShowContext)!;
+  const { modal, setModal } = useContext(LoginModalShowContext)!;
 
   return ReactDOM.createPortal(
     <AnimatePresence>
-      {visible && (
+      {modal.visible && (
         <>
-          {/* <Mask onClick={() => {
-            setVisible(false)
-          }} /> */}
           <motion.div
             key="mask"
             initial={{
@@ -42,7 +38,9 @@ function LoginModal({ width, height, title, children }: Props) {
               top: "0px",
               left: "0px",
             }}
-            onClick={() => setVisible(false)}
+            onClick={() => {
+              setModal({ ...modal, visible: false });
+            }}
             animate={{
               backgroundColor: "#3d3d3d4c",
               width: "100vw",
@@ -56,7 +54,7 @@ function LoginModal({ width, height, title, children }: Props) {
             key={"modal"}
             initial={{
               width: "0px",
-              height: "0px",
+              height: "max-content",
               position: "fixed",
               left: "100%",
               marginLeft: "0px",
@@ -112,7 +110,7 @@ function LoginModal({ width, height, title, children }: Props) {
                 size={30}
                 color={"#fff"}
                 onClick={() => {
-                  setVisible(false);
+                  setModal({ ...modal, visible: false });
                 }}
               />
             </motion.div>

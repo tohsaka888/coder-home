@@ -2,35 +2,45 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 17:18:55
+ * @LastEditTime: 2022-09-26 13:35:42
  * @Description: Navbar
  */
 
 import React, { CSSProperties, useMemo, useState } from "react";
-import { Button, Form, Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
 import { useRouter } from "next/router";
-import { BsGithub, BsTrophyFill, BsTwitch } from "react-icons/bs";
+import {
+  BsGithub,
+  BsTrophyFill,
+  BsTwitch,
+  BsPersonCircle,
+} from "react-icons/bs";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
 import useGetCompetitionList from "hooks/services/useGetCompetitionList";
 import { Flex } from "styles/index.style";
 import Logo from "./Logo";
-import { LoginModalShowContext } from "./context";
+import { LoginModalShowContext } from "context";
 import dynamic from "next/dynamic";
-import NightInput from "../NightInput";
-import { NightFormContainer } from "./index.style";
-import useLoginOrRegister from "hooks/services/useLoginOrRegister";
-import useLoginStatus from "hooks/services/useLoginStatus";
-import useAuthCode from "hooks/services/useAuthCode";
-import { useSWRConfig } from "swr";
-import { baseUrl } from "config/baseUrl";
 import LoginPanel from "./LoginPanel";
+import useLoginStatus from "hooks/services/useLoginStatus";
+import UserAvatar from "../UserAvatar";
+import useToken from "hooks/useToken";
+import { useSWRConfig } from "swr";
+import { loginUrl } from "config/baseUrl";
+import RegisterPanel from "./RegisterPanel";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
   const { Header } = Layout;
   const { list } = useGetCompetitionList();
   const router = useRouter();
-  const [visible, setVisible] = useState<boolean>(false);
+  const [modal, setModal] = useState<HomePage.ModalProps>({
+    type: "login",
+    visible: false,
+  });
+  const { loginStatus } = useLoginStatus();
+  const { removeToken } = useToken();
+  const { mutate } = useSWRConfig();
 
   const pathname = router.pathname;
 
@@ -65,7 +75,7 @@ function Navbar() {
   }, []);
 
   return (
-    <LoginModalShowContext.Provider value={{ visible, setVisible }}>
+    <LoginModalShowContext.Provider value={{ modal, setModal }}>
       <Header style={style}>
         <Flex alignItems="center" justifyContent="space-between">
           <Flex alignItems="center">
@@ -79,7 +89,7 @@ function Navbar() {
               onSelect={(info) => {
                 if (info.key === "competition") {
                   if (list.length !== 0) {
-                    router.push(`/competition/632134dcf5dfb3655d9e6db4`);
+                    router.push(`/competition/${list[0].id}`);
                   }
                 }
               }}
@@ -88,26 +98,63 @@ function Navbar() {
           <Flex alignItems="center">
             <BsGithub
               size={25}
-              style={{ marginRight: "16px", cursor: "pointer" }}
+              style={{ marginRight: "16px", cursor: "pointer", color: "#fff" }}
               onClick={() =>
                 router.push("https://github.com/tohsaka888/coder-home")
               }
             />
-            <Button
-              type="primary"
-              shape={"round"}
-              style={{ width: "80px" }}
-              onClick={() => {
-                setVisible(true);
-              }}
-            >
-              登录
-            </Button>
+            {!loginStatus ? (
+              <>
+                <BsPersonCircle
+                  size={26}
+                  style={{
+                    marginRight: "16px",
+                    cursor: "pointer",
+                    color: "#fff",
+                  }}
+                  onClick={() => {
+                    setModal({
+                      type: "register",
+                      visible: true,
+                    });
+                  }}
+                />
+                <Button
+                  type="primary"
+                  shape={"round"}
+                  style={{ width: "80px" }}
+                  onClick={() => {
+                    setModal({
+                      type: "login",
+                      visible: true,
+                    });
+                  }}
+                >
+                  登录
+                </Button>
+              </>
+            ) : (
+              <>
+                <UserAvatar username={loginStatus.username} />
+                <Button
+                  danger
+                  type="primary"
+                  shape={"round"}
+                  style={{ width: "100px", marginLeft: "16px" }}
+                  onClick={() => {
+                    removeToken();
+                    mutate(`${loginUrl}/api/login/status`);
+                  }}
+                >
+                  退出登录
+                </Button>
+              </>
+            )}
           </Flex>
         </Flex>
       </Header>
-      <LoginModal width={600} height={390} title={"Login"}>
-        <LoginPanel />
+      <LoginModal width={600} title={modal.type}>
+        {modal.type === "login" ? <LoginPanel /> : <RegisterPanel />}
       </LoginModal>
     </LoginModalShowContext.Provider>
   );
