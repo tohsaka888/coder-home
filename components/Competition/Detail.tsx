@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 17:28:02
+ * @LastEditTime: 2022-09-27 08:37:39
  * @Description: 比赛详情
  */
 
@@ -16,6 +16,7 @@ import { Container, PartContainer } from "./index.style";
 import moment from "moment";
 import useIsSignUp from "hooks/services/useIsSignUp";
 import Banner from "./Banner";
+import BasicInfo from "./BasicInfo";
 
 function Detail() {
   const { competition } = useGetCompetitionDetail();
@@ -76,13 +77,7 @@ function Detail() {
 
           <Flex>
             <Banner />
-            <PartContainer
-              style={{
-                padding: "8px",
-                margin: "8px",
-                marginLeft: "0px",
-              }}
-            />
+            <BasicInfo />
           </Flex>
         </Container>
       ) : (
