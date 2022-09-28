@@ -13,32 +13,33 @@ import { AvatarContainer } from "./index.style";
 
 type Props = {
   username: string;
+  r?: string;
 };
 
-function UserAvatar({ username }: Props) {
+function UserAvatar({ username, r }: Props) {
   return (
     <AvatarContainer>
       {/* <Popover placement="bottom"> */}
-        <motion.div
-          initial={{
-            width: "30px",
-            height: "30px",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#1890ff",
-            color: "#ffffff",
-            fontWeight: "bolder",
-            cursor: "pointer",
-          }}
-          whileHover={{
-            width: "38px",
-            height: "38px",
-          }}
-        >
-          {username[0].toUpperCase()}
-        </motion.div>
+      <motion.div
+        initial={{
+          width: r || "30px",
+          height: r || "30px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#1890ff",
+          color: "#ffffff",
+          fontWeight: "bolder",
+          cursor: "pointer",
+        }}
+        whileHover={{
+          width: "38px",
+          height: "38px",
+        }}
+      >
+        {username[0].toUpperCase()}
+      </motion.div>
       {/* </Popover> */}
     </AvatarContainer>
   );
