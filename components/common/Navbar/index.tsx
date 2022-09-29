@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-19 09:24:54
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 13:35:42
+ * @LastEditTime: 2022-09-29 16:18:41
  * @Description: Navbar
  */
 
@@ -91,6 +91,8 @@ function Navbar() {
                   if (list.length !== 0) {
                     router.push(`/competition/${list[0].id}`);
                   }
+                } else if (info.key === "activity") {
+                  router.push(`/activity`);
                 }
               }}
             />
