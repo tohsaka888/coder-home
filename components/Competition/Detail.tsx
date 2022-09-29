@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 09:30:50
+ * @LastEditTime: 2022-09-29 13:11:45
  * @Description: 比赛详情
  */
 
@@ -22,6 +22,7 @@ import PartTitle from "./PartTitle";
 import PieGraph from "./PieGraph";
 import BarGraph from "./BarGraph";
 import ColorWordCloud from "./ColorWordCloud";
+import ParticipantTable from "./ParticipantTable";
 
 function Detail() {
   const { competition } = useGetCompetitionDetail();
@@ -138,17 +139,16 @@ function Detail() {
           </Flex>
 
           <Flex>
-            <PartContainer
-              style={{ margin: "0px 8px 8px 8px", height: "300px", flex: 1 }}
-            >
+            <PartContainer style={{ margin: "0px 8px 8px 8px" }}>
               <PartTitle title={"报名用户词云"} />
-              <div style={{ height: "250px", width: "100%" }}>
+              <div style={{ width: "500px", height: "340px" }}>
                 <ColorWordCloud />
               </div>
             </PartContainer>
-            <PartContainer
-              style={{ margin: "0px 8px 8px 0px", height: "300px", flex: 1 }}
-            ></PartContainer>
+            <PartContainer style={{ margin: "0px 8px 8px 0px", flex: 1 }}>
+              <PartTitle title={"报名用户表格"} />
+              <ParticipantTable />
+            </PartContainer>
           </Flex>
         </Container>
       ) : (
