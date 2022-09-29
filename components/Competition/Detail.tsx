@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-27 08:37:39
+ * @LastEditTime: 2022-09-29 09:30:50
  * @Description: 比赛详情
  */
 
@@ -17,6 +17,11 @@ import moment from "moment";
 import useIsSignUp from "hooks/services/useIsSignUp";
 import Banner from "./Banner";
 import BasicInfo from "./BasicInfo";
+import LiquidGraph from "./LiquidGraph";
+import PartTitle from "./PartTitle";
+import PieGraph from "./PieGraph";
+import BarGraph from "./BarGraph";
+import ColorWordCloud from "./ColorWordCloud";
 
 function Detail() {
   const { competition } = useGetCompetitionDetail();
@@ -42,7 +47,14 @@ function Detail() {
     <>
       {competition ? (
         <Container>
-          <PartContainer style={{ position: "sticky", top: "0px" }}>
+          <PartContainer
+            style={{
+              position: "sticky",
+              top: "0px",
+              zIndex: 999,
+              boxShadow: "0px 0px 10px 2px #dfdfdf",
+            }}
+          >
             <Flex alignItems="center" justifyContent="space-between">
               <Flex alignItems="center">
                 <BsTagFill style={{ marginRight: "8px" }} size={20} />
@@ -78,6 +90,65 @@ function Detail() {
           <Flex>
             <Banner />
             <BasicInfo />
+          </Flex>
+
+          <Flex>
+            <PartContainer
+              style={{
+                padding: "8px",
+                margin: "8px",
+                width: "300px",
+                height: "330px",
+                marginTop: "0px",
+                display: "block",
+              }}
+            >
+              <PartTitle title={"当前报名人数占比"} />
+              <div style={{ width: "100%", height: "300px" }}>
+                <LiquidGraph />
+              </div>
+            </PartContainer>
+            <PartContainer
+              style={{
+                padding: "8px",
+                marginRight: "8px",
+                marginBottom: "8px",
+                flex: 1,
+                height: "330px",
+              }}
+            >
+              <PartTitle title={"奖项设置"} />
+              <Flex>
+                <div style={{ height: "300px", width: "480px" }}>
+                  <PieGraph />
+                </div>
+                <div
+                  style={{
+                    flex: 1,
+                    height: "300px",
+                    padding: "8px 0px 12px 8px",
+                  }}
+                >
+                  <div style={{ width: "100%", height: "100%" }}>
+                    <BarGraph />
+                  </div>
+                </div>
+              </Flex>
+            </PartContainer>
+          </Flex>
+
+          <Flex>
+            <PartContainer
+              style={{ margin: "0px 8px 8px 8px", height: "300px", flex: 1 }}
+            >
+              <PartTitle title={"报名用户词云"} />
+              <div style={{ height: "250px", width: "100%" }}>
+                <ColorWordCloud />
+              </div>
+            </PartContainer>
+            <PartContainer
+              style={{ margin: "0px 8px 8px 0px", height: "300px", flex: 1 }}
+            ></PartContainer>
           </Flex>
         </Container>
       ) : (
