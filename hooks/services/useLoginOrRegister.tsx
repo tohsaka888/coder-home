@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 15:39:38
+ * @LastEditTime: 2022-09-29 14:07:07
  * @Description: 登录相关接口
  */
 import { message } from "antd";
@@ -72,9 +72,13 @@ function useLoginOrRegister() {
         );
         const data: LoginResponseData = await res.json();
         if (data.success) {
-          dispatchToken(data.token);
-          mutate(`${loginUrl}/api/login/status`);
-          message.success("登录成功");
+          if (data.canLogin) {
+            dispatchToken(data.token);
+            mutate(`${loginUrl}/api/login/status`);
+            message.success("登录成功");
+          } else {
+            message.error("用户名或者密码错误");
+          }
         } else {
           message.error(data.error);
           push("/error/" + encodeURIComponent(data.error));
@@ -87,62 +91,68 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errorMsg));
       }
     },
-    [mutate, push]
+    [dispatchToken, mutate, push]
   );
 
-  const sendEmail = useCallback(async (email: string) => {
-    setLoading(true);
-    try {
-      const res = await fetch(`${loginUrl}/api/authcode/get`, {
-        mode: "cors",
-        body: JSON.stringify({ email }),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data: GetEmailResponseData = await res.json();
-      setLoading(false);
-      if (data.success) {
-        return data.code;
-      } else {
-        message.error(data.error);
-        push("/error/" + encodeURIComponent(data.error));
+  const sendEmail = useCallback(
+    async (email: string) => {
+      setLoading(true);
+      try {
+        const res = await fetch(`${loginUrl}/api/authcode/get`, {
+          mode: "cors",
+          body: JSON.stringify({ email }),
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data: GetEmailResponseData = await res.json();
+        setLoading(false);
+        if (data.success) {
+          return data.code;
+        } else {
+          message.error(data.error);
+          push("/error/" + encodeURIComponent(data.error));
+        }
+      } catch (error) {
+        const errMsg = (error as Error).message;
+        setLoading(false);
+        message.error(errMsg);
+        push("/error/" + encodeURIComponent(errMsg));
       }
-    } catch (error) {
-      const errMsg = (error as Error).message;
-      setLoading(false);
-      message.error(errMsg);
-      push("/error/" + encodeURIComponent(errMsg));
-    }
-  }, []);
+    },
+    [push]
+  );
 
-  const verifyEmail = useCallback(async (email: string, code: string) => {
-    setLoading(true);
-    try {
-      const res = await fetch(`${loginUrl}/api/authcode/verify`, {
-        mode: "cors",
-        method: "POST",
-        body: JSON.stringify({ email, code }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data: VerifyEmailResponseData = await res.json();
-      setLoading(false);
-      if (data.success) {
-        return data.canRegister;
-      } else {
-        message.error(data.error);
-        push("/error/" + encodeURIComponent(data.error));
+  const verifyEmail = useCallback(
+    async (email: string, code: string) => {
+      setLoading(true);
+      try {
+        const res = await fetch(`${loginUrl}/api/authcode/verify`, {
+          mode: "cors",
+          method: "POST",
+          body: JSON.stringify({ email, code }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data: VerifyEmailResponseData = await res.json();
+        setLoading(false);
+        if (data.success) {
+          return data.canRegister;
+        } else {
+          message.error(data.error);
+          push("/error/" + encodeURIComponent(data.error));
+        }
+      } catch (error) {
+        const errMsg = (error as Error).message;
+        setLoading(false);
+        message.error(errMsg);
+        push("/error/" + encodeURIComponent(errMsg));
       }
-    } catch (error) {
-      const errMsg = (error as Error).message;
-      setLoading(false);
-      message.error(errMsg);
-      push("/error/" + encodeURIComponent(errMsg));
-    }
-  }, []);
+    },
+    [push]
+  );
 
   const register = useCallback(
     async (email: string, password: string, username: string) => {
@@ -171,7 +181,7 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errMsg));
       }
     },
-    []
+    [push]
   );
 
   const forget = useCallback(async (email: string, password: string) => {
