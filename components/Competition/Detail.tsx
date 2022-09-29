@@ -2,14 +2,14 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 14:32:49
+ * @LastEditTime: 2022-09-29 15:55:39
  * @Description: 比赛详情
  */
 
 import { Button, Tag } from "antd";
 import Loading from "components/common/Loading";
 import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { BsTagFill } from "react-icons/bs";
 import { Flex } from "styles/index.style";
 import { Container, PartContainer } from "./index.style";
@@ -24,11 +24,13 @@ import BarGraph from "./BarGraph";
 import ColorWordCloud from "./ColorWordCloud";
 import ParticipantTable from "./ParticipantTable";
 import useCompetitionSign from "hooks/services/useCompetitionSign";
+import AwardTableModal from "./AwardTableModal";
 
 function Detail() {
   const { competition } = useGetCompetitionDetail();
   const { isSignUp, mutate } = useIsSignUp();
   const { signUp, reject, loading } = useCompetitionSign();
+  const [visible, setVisible] = useState<boolean>(false);
 
   const status = useMemo(() => {
     if (competition) {
@@ -75,9 +77,24 @@ function Detail() {
                 </Tag>
               </Flex>
               <Flex>
-                <Button shape={"round"} style={{ marginRight: "8px" }}>
+                <Button
+                  shape={"round"}
+                  style={{ marginRight: "8px" }}
+                  onClick={() => {
+                    setVisible(true);
+                  }}
+                >
                   获奖名单
                 </Button>
+                <AwardTableModal
+                  visible={visible}
+                  onCancel={() => {
+                    setVisible(false);
+                  }}
+                  onOk={() => {
+                    setVisible(false);
+                  }}
+                />
                 <Button
                   loading={loading}
                   type="primary"
