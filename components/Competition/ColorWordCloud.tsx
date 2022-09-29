@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-29 09:10:40
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 09:34:55
+ * @LastEditTime: 2022-09-29 16:08:34
  * @Description: 彩色词云
  */
 
@@ -10,7 +10,7 @@ import { WordCloud } from "@ant-design/plots";
 import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
 import React, { useMemo } from "react";
 
-function ColorWordCloud() {
+function UnMemoColorWordCloud() {
   const { competition } = useGetCompetitionDetail();
 
   const data = useMemo(() => {
@@ -53,5 +53,7 @@ function ColorWordCloud() {
 
   return <WordCloud {...config} />;
 }
+
+const ColorWordCloud = React.memo(UnMemoColorWordCloud);
 
 export default ColorWordCloud;

@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-28 17:19:13
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 09:00:25
+ * @LastEditTime: 2022-09-29 16:06:31
  * @Description: 柱状图
  */
 
@@ -10,8 +10,9 @@ import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
 import React, { useMemo } from "react";
 import { Bar, getCanvasPattern, BarConfig } from "@ant-design/plots";
 
-function BarGraph() {
+function UnMemoBarGraph() {
   const { competition } = useGetCompetitionDetail();
+
   const data = useMemo(() => {
     return competition
       ? competition.awardSetting.map((award) => ({
@@ -65,5 +66,7 @@ function BarGraph() {
   };
   return <Bar {...config} />;
 }
+
+const BarGraph = React.memo(UnMemoBarGraph);
 
 export default BarGraph;

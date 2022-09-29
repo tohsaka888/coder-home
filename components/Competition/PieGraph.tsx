@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-28 16:58:06
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 13:39:32
+ * @LastEditTime: 2022-09-29 16:07:51
  * @Description: 饼图
  */
 
@@ -10,7 +10,7 @@ import React, { useMemo } from "react";
 import { Pie, getCanvasPattern, PieConfig } from "@ant-design/plots";
 import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
 
-function PieGraph() {
+function UnMemoPieGraph() {
   const { competition } = useGetCompetitionDetail();
 
   const data = useMemo(() => {
@@ -102,5 +102,7 @@ function PieGraph() {
 
   return <Pie {...config} />;
 }
+
+const PieGraph = React.memo(UnMemoPieGraph);
 
 export default PieGraph;
