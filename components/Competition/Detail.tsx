@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 13:41:22
+ * @LastEditTime: 2022-09-29 14:32:49
  * @Description: 比赛详情
  */
 
@@ -23,10 +23,12 @@ import PieGraph from "./PieGraph";
 import BarGraph from "./BarGraph";
 import ColorWordCloud from "./ColorWordCloud";
 import ParticipantTable from "./ParticipantTable";
+import useCompetitionSign from "hooks/services/useCompetitionSign";
 
 function Detail() {
   const { competition } = useGetCompetitionDetail();
-  const { isSignUp } = useIsSignUp();
+  const { isSignUp, mutate } = useIsSignUp();
+  const { signUp, reject, loading } = useCompetitionSign();
 
   const status = useMemo(() => {
     if (competition) {
@@ -77,10 +79,19 @@ function Detail() {
                   获奖名单
                 </Button>
                 <Button
+                  loading={loading}
                   type="primary"
                   shape={"round"}
                   disabled={status !== "进行中"}
                   danger={isSignUp}
+                  onClick={async () => {
+                    if (isSignUp) {
+                      await reject();
+                    } else {
+                      await signUp();
+                    }
+                    mutate();
+                  }}
                 >
                   {isSignUp ? "取消报名" : "报名比赛"}
                 </Button>
