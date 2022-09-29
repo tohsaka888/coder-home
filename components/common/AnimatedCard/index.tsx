@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-27 08:52:11
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-28 11:47:56
+ * @LastEditTime: 2022-09-29 13:23:10
  * @Description: 动画卡片
  */
 
@@ -21,7 +21,7 @@ function AnimatedCard({ title, content }: Props) {
     <motion.div
       initial={{
         width: "100%",
-        height: "0px",
+        height: "90px",
         opacity: 0,
         border: "1px solid #dfdfdf",
         borderRadius: "8px",
@@ -29,7 +29,7 @@ function AnimatedCard({ title, content }: Props) {
         marginRight: "8px",
         scale: 1,
       }}
-      animate={{ height: "90px", opacity: 1 }}
+      animate={{ opacity: 1 }}
       onHoverStart={() => {
         setIsHover(true);
       }}
