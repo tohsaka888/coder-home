@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:30:34
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-28 16:50:26
+ * @LastEditTime: 2022-09-29 13:35:06
  * @Description: style
  */
 
@@ -18,12 +18,27 @@ export const Container = styled.div`
   height: calc(100vh - 65px);
   overflow-x: hidden;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #cecece;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #cecece;
+    background-color: #dfdfdf;
+  }
 `;
 
 export const PartTitleContainer = styled.div`
   padding: 4px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid #cecece;
   width: 100%;
 `;
