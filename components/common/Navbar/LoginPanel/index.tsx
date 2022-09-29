@@ -24,6 +24,7 @@ function LoginPanel() {
   });
   const [code, setCode] = useState<string>("");
   const { setModal } = useContext(LoginModalShowContext)!;
+  const [form] = Form.useForm();
 
   const codeStatus = useMemo(() => {
     if (authcode) {
@@ -49,6 +50,7 @@ function LoginPanel() {
             marginLeft: "36px",
             marginRight: "36px",
           }}
+          form={form}
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 19 }}
           requiredMark={"optional"}
@@ -164,6 +166,7 @@ function LoginPanel() {
             style={{ width: "100%", margin: "16px 48px" }}
             size={"large"}
             onClick={async () => {
+              await form.validateFields();
               await login({ ...account });
               setModal((model) => ({ ...model, visible: false }));
             }}
