@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-27 08:52:11
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 13:23:10
+ * @LastEditTime: 2022-09-29 13:58:50
  * @Description: 动画卡片
  */
 
@@ -37,7 +37,7 @@ function AnimatedCard({ title, content }: Props) {
         setIsHover(false);
       }}
       whileHover={{
-        scale: 1.01,
+        scale: 1.02,
         background: "linear-gradient(145deg, #ffffff, #f0f0f0)",
         boxShadow: `5px 5px 10px #e6e6e6,
         -5px -5px 10px #ffffff`,
@@ -66,7 +66,7 @@ function AnimatedCard({ title, content }: Props) {
           }}
           animate={{
             color: isHover ? "#1890ff" : "#000",
-            fontSize: "1.1rem",
+            fontSize: "1.05rem",
             fontWeight: isHover ? "bolder" : "normal",
           }}
           transition={{
