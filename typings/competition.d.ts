@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:03:20
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 15:10:23
+ * @LastEditTime: 2022-09-29 13:14:19
  * @Description: 比赛type
  */
 
@@ -34,6 +34,7 @@ declare namespace Competition {
   type Participant = {
     username: string;
     email: string;
+    _id: string
   }
 
   type CompetitionImage = {
