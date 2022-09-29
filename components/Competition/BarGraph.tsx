@@ -59,23 +59,7 @@ function BarGraph() {
     conversionTag: {},
     // 可不设置
     seriesField: "type",
-    legend: {
-      // @ts-ignore
-      marker: (text: any, index: number, item: any) => {
-        const color = item.style.fill;
-        return {
-          style: {
-            fill: pattern(
-              {
-                type: text,
-              },
-              color
-            ),
-            r: 8,
-          },
-        };
-      },
-    },
+    legend: false,
     // @ts-ignore
     pattern,
   };
