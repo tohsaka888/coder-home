@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 16:18:27
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 16:43:20
+ * @LastEditTime: 2022-09-29 14:14:33
  * @Description: 是否已经参加过比赛
  */
 
@@ -31,7 +31,7 @@ function useIsSignUp() {
     return data;
   }, []);
 
-  const { data, error } = useSWR(
+  const { data, error, mutate } = useSWR(
     loginStatus?.username
       ? [
           `${competitionUrl}/api/competition/is-sign-up/${query.id}`,
@@ -56,9 +56,9 @@ function useIsSignUp() {
         push("/error/" + data.error);
       }
     }
-  }, [data, error]);
+  }, [data, error, push]);
 
-  return { isSignUp };
+  return { isSignUp, mutate };
 }
 
 export default useIsSignUp;
