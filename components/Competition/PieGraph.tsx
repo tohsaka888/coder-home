@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-28 16:58:06
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 08:59:31
+ * @LastEditTime: 2022-09-29 13:39:32
  * @Description: 饼图
  */
 
@@ -72,24 +72,25 @@ function PieGraph() {
       lineWidth: 1,
     },
     // 给legend增加贴图
-    legend: {
-      // @ts-ignore
-      marker: (text: any, index, item) => {
-        // @ts-ignore
-        const color = item.style.fill;
-        return {
-          style: {
-            fill: pattern(
-              {
-                type: text,
-              },
-              color
-            ),
-            r: 8,
-          },
-        };
-      },
-    },
+    // legend: {
+    //   // @ts-ignore
+    //   marker: (text: any, index, item) => {
+    //     // @ts-ignore
+    //     const color = item.style.fill;
+    //     return {
+    //       style: {
+    //         fill: pattern(
+    //           {
+    //             type: text,
+    //           },
+    //           color
+    //         ),
+    //         r: 8,
+    //       },
+    //     };
+    //   },
+    // },
+    legend: false,
     // @ts-ignore
     pattern,
     interactions: [
