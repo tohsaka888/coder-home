@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-29 13:46:36
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 14:31:35
+ * @LastEditTime: 2022-09-29 14:54:02
  * @Description: 比赛报名相关接口
  */
 
@@ -55,7 +55,8 @@ function useCompetitionSign() {
         key: "login_first",
       });
     }
-  }, [loginStatus, mutate, push, query.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loginStatus, query.id]);
 
   const reject = useCallback(async (): Promise<void> => {
     setLoading(true);
@@ -93,7 +94,8 @@ function useCompetitionSign() {
         key: "login_first",
       });
     }
-  }, [loginStatus, mutate, push, query.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loginStatus, query.id]);
 
   return { signUp, reject, loading };
 }
