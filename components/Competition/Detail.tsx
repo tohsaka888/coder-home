@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:12:56
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 13:11:45
+ * @LastEditTime: 2022-09-29 13:41:22
  * @Description: 比赛详情
  */
 
@@ -120,7 +120,7 @@ function Detail() {
             >
               <PartTitle title={"奖项设置"} />
               <Flex>
-                <div style={{ height: "300px", width: "480px" }}>
+                <div style={{ height: "300px", width: "380px" }}>
                   <PieGraph />
                 </div>
                 <div
@@ -130,7 +130,12 @@ function Detail() {
                     padding: "8px 0px 12px 8px",
                   }}
                 >
-                  <div style={{ width: "100%", height: "100%" }}>
+                  <div
+                    style={{
+                      width: "calc(100vw - 15vw - 740px)",
+                      height: "100%",
+                    }}
+                  >
                     <BarGraph />
                   </div>
                 </div>
