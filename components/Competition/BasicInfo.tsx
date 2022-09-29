@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-27 08:32:25
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-28 11:48:44
+ * @LastEditTime: 2022-09-29 08:37:16
  * @Description: 比赛信息
  */
 
@@ -28,6 +28,7 @@ function BasicInfo() {
         padding: "8px",
         margin: "8px",
         marginLeft: "0px",
+        flex: 1,
       }}
     >
       {competition && (
