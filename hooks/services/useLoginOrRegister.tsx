@@ -2,14 +2,14 @@
  * @Author: tohsaka888
  * @Date: 2022-09-26 08:23:52
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 14:07:07
+ * @LastEditTime: 2022-09-29 15:14:09
  * @Description: 登录相关接口
  */
 import { message } from "antd";
 import { loginUrl } from "config/baseUrl";
 import useToken from "hooks/useToken";
 import { useRouter } from "next/router";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { useState } from "react";
 import { useSWRConfig } from "swr";
 
@@ -91,7 +91,8 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errorMsg));
       }
     },
-    [dispatchToken, mutate, push]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const sendEmail = useCallback(
@@ -121,7 +122,8 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errMsg));
       }
     },
-    [push]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const verifyEmail = useCallback(
@@ -151,7 +153,8 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errMsg));
       }
     },
-    [push]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const register = useCallback(
@@ -181,7 +184,8 @@ function useLoginOrRegister() {
         push("/error/" + encodeURIComponent(errMsg));
       }
     },
-    [push]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const forget = useCallback(async (email: string, password: string) => {
@@ -209,6 +213,7 @@ function useLoginOrRegister() {
       message.error(errMsg);
       push("/error/" + encodeURIComponent(errMsg));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { login, register, forget, loading, sendEmail, verifyEmail };

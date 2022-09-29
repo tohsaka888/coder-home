@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 15:30:34
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 13:35:06
+ * @LastEditTime: 2022-09-29 15:13:56
  * @Description: style
  */
 
@@ -24,13 +24,13 @@ export const Container = styled.div`
     background-color: #f5f5f5;
   }
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #cecece;
+    box-shadow: inset 0 0 6px #cecece;
     border-radius: 10px;
     background-color: #f5f5f5;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px #cecece;
+    box-shadow: inset 0 0 6px #cecece;
     background-color: #dfdfdf;
   }
 `;

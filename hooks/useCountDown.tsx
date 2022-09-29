@@ -28,7 +28,7 @@ function useCountDown() {
         setRun(false);
       }
     }
-  }, [count]);
+  }, [count, run]);
 
   const countDown = useCallback((seconds: number) => {
     setCount(seconds);
