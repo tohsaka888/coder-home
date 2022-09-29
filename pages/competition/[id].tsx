@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-23 11:43:11
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-23 15:35:08
+ * @LastEditTime: 2022-09-29 13:37:24
  * @Description: 比赛详情页
  */
 
@@ -25,7 +25,7 @@ function Competition() {
       <CustomHead />
       <Navbar />
       <Layout style={{ height: "calc(100vh - 65px)" }}>
-        <Layout.Sider theme="light" style={{ height: "100%" }}>
+        <Layout.Sider theme="light" style={{ height: "100%" }} width={"15vw"}>
           {list.length === 0 ? (
             <Loading />
           ) : (
