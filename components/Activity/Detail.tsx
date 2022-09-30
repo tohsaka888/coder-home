@@ -2,7 +2,7 @@
  * @Author: tohsaka888
  * @Date: 2022-09-29 16:25:49
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-30 08:33:05
+ * @LastEditTime: 2022-09-30 08:37:27
  * @Description: 活动详情
  */
 
@@ -26,7 +26,7 @@ function Detail() {
           <InfiniteScroll
             dataLength={length}
             next={nextPage}
-            hasMore={length !== 0}
+            hasMore={length === 5}
             scrollableTarget={"target"}
             endMessage={
               <p style={{ textAlign: "center", marginBottom: "16px" }}>
