@@ -2,11 +2,12 @@
  * @Author: tohsaka888
  * @Date: 2022-09-29 16:25:49
  * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-29 17:06:28
+ * @LastEditTime: 2022-09-30 08:33:05
  * @Description: 活动详情
  */
 
 import { Spin } from "antd";
+import Loading from "components/common/Loading";
 import useActivity from "hooks/services/useActivity";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -19,20 +20,26 @@ function Detail() {
   return (
     <Container>
       <Target id={"target"}>
-        <InfiniteScroll
-          dataLength={length}
-          next={nextPage}
-          hasMore={length !== 0}
-          scrollableTarget={"target"}
-          endMessage={
-            <p style={{ textAlign: "center", marginBottom: "16px" }}>
-              <b>~~到底啦~~</b>
-            </p>
-          }
-          loader={<Spin />}
-        >
-          {list.map(activity => <ActivityCard activity={activity} key={activity._id} />)}
-        </InfiniteScroll>
+        {loading ? (
+          <Loading />
+        ) : (
+          <InfiniteScroll
+            dataLength={length}
+            next={nextPage}
+            hasMore={length !== 0}
+            scrollableTarget={"target"}
+            endMessage={
+              <p style={{ textAlign: "center", marginBottom: "16px" }}>
+                <b>~~到底啦~~</b>
+              </p>
+            }
+            loader={<Spin />}
+          >
+            {list.map((activity) => (
+              <ActivityCard activity={activity} key={activity._id} />
+            ))}
+          </InfiniteScroll>
+        )}
       </Target>
     </Container>
   );
