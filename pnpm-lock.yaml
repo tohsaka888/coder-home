@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ant-design/plots': 1.2.2
   '@react-spring/web': 9.5.5
-  '@react-three/drei': 9.32.3
+  '@react-three/drei': 9.32.4
   '@react-three/fiber': 8.8.7
   '@types/node': 18.7.18
   '@types/react': 18.0.21
@@ -13,7 +13,7 @@ specifiers:
   antd: 4.23.3
   eslint: 8.24.0
   eslint-config-next: 12.3.0
-  framer-motion: 7.4.0
+  framer-motion: 7.5.0
   moment: 2.29.4
   next: 12.3.0
   next-transpile-modules: 9.0.0
@@ -31,10 +31,10 @@ specifiers:
 dependencies:
   '@ant-design/plots': 1.2.2_biqbaboplfbrettd7655fr4n2y
   '@react-spring/web': 9.5.5_biqbaboplfbrettd7655fr4n2y
-  '@react-three/drei': 9.32.3_qgxapqo6dnchmipmfh2wecdada
+  '@react-three/drei': 9.32.4_qgxapqo6dnchmipmfh2wecdada
   '@react-three/fiber': 8.8.7_ee34sidbpuk5ebd4phepfgxxdi
   antd: 4.23.3_biqbaboplfbrettd7655fr4n2y
-  framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.5.0_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -812,8 +812,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@react-three/drei/9.32.3_qgxapqo6dnchmipmfh2wecdada:
-    resolution: {integrity: sha512-MLLBRukt5E94sXox3Ika2ltIrQi3kAfNhefev+Gk225iBdEX+J4fmhBj3TlSGw9Dg0neZ7d47XwTKXrdx/jxGQ==}
+  /@react-three/drei/9.32.4_qgxapqo6dnchmipmfh2wecdada:
+    resolution: {integrity: sha512-b80Ensi/wgrZb2GSchx2r2HgPTTLAgTaSmon+IYxmqw8DaUKRup1fmeJGPTKs/E8Z0r+39cf0tDLn1PDfrxbCQ==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
       react: '>=18.0'
@@ -2031,8 +2031,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion/7.4.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-tcvL5L1cASYjIeBG6mQHhzfndm7MdyHjOwqIdOzOetIVa1yUqeYMufAoljgqg69XFgsgZet+c4iuSuFF+Vgbjg==}
+  /framer-motion/7.5.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-uz42xPsO5VmoRrT0Q2I1UZBvQ+Px0Is2c+7mum2z/UhC9m2Q1/2DmSR82ncc5qRtO/4OerNEm473ktOEX3unRg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
