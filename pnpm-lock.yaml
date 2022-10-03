@@ -10,7 +10,7 @@ specifiers:
   '@types/react-dom': 18.0.6
   '@types/styled-components': 5.1.26
   '@types/three': 0.144.0
-  antd: 4.23.3
+  antd: 4.23.4
   eslint: 8.24.0
   eslint-config-next: 12.3.0
   framer-motion: 7.5.1
@@ -33,7 +33,7 @@ dependencies:
   '@react-spring/web': 9.5.5_biqbaboplfbrettd7655fr4n2y
   '@react-three/drei': 9.32.7_qgxapqo6dnchmipmfh2wecdada
   '@react-three/fiber': 8.8.7_ee34sidbpuk5ebd4phepfgxxdi
-  antd: 4.23.3_biqbaboplfbrettd7655fr4n2y
+  antd: 4.23.4_biqbaboplfbrettd7655fr4n2y
   framer-motion: 7.5.1_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
@@ -892,13 +892,6 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@testing-library/user-event/14.4.3:
-    resolution: {integrity: sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==}
-    engines: {node: '>=12', npm: '>=6'}
-    peerDependencies:
-      '@testing-library/dom': '>=7.21.4'
-    dev: false
-
   /@types/d3-timer/2.0.1:
     resolution: {integrity: sha512-TF8aoF5cHcLO7W7403blM7L1T+6NF3XMyN3fxyUolq2uOcFeicG/khQg/dGxiCJWoAcmYulYN7LYSRKO54IXaA==}
     dev: false
@@ -1116,8 +1109,8 @@ packages:
       color-convert: 2.0.1
     dev: true
 
-  /antd/4.23.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-qkvb9BAlkBRkPyFgjfDgTEiWwyMG85pTrcsfFq2VGUr4NLuCIDIQiAqTjQYk4qJ7iGYghPomrLXkulHUofswWg==}
+  /antd/4.23.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-2VdDSPXEjCc2m2qBgv6DKpKnsKIGyQtJBdcGn223EqHxDWHqCaRxeJIA9bcW50ntHFkwdeBa+IeWLBor377dkA==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -1127,7 +1120,6 @@ packages:
       '@ant-design/react-slick': 0.29.2_react@18.2.0
       '@babel/runtime': 7.19.0
       '@ctrl/tinycolor': 3.4.1
-      '@testing-library/user-event': 14.4.3
       classnames: 2.3.2
       copy-to-clipboard: 3.3.2
       lodash: 4.17.21
@@ -1169,8 +1161,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 2.2.29
-    transitivePeerDependencies:
-      - '@testing-library/dom'
     dev: false
 
   /argparse/2.0.1:
