@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ant-design/plots': 1.2.2
   '@react-spring/web': 9.5.5
-  '@react-three/drei': 9.34.0
+  '@react-three/drei': 9.34.3
   '@react-three/fiber': 8.8.7
   '@types/node': 18.7.18
   '@types/react': 18.0.21
@@ -31,7 +31,7 @@ specifiers:
 dependencies:
   '@ant-design/plots': 1.2.2_biqbaboplfbrettd7655fr4n2y
   '@react-spring/web': 9.5.5_biqbaboplfbrettd7655fr4n2y
-  '@react-three/drei': 9.34.0_qgxapqo6dnchmipmfh2wecdada
+  '@react-three/drei': 9.34.3_qgxapqo6dnchmipmfh2wecdada
   '@react-three/fiber': 8.8.7_ee34sidbpuk5ebd4phepfgxxdi
   antd: 4.23.4_biqbaboplfbrettd7655fr4n2y
   framer-motion: 7.5.2_biqbaboplfbrettd7655fr4n2y
@@ -812,8 +812,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@react-three/drei/9.34.0_qgxapqo6dnchmipmfh2wecdada:
-    resolution: {integrity: sha512-hVnw8WuZAvZNB1ZEC20G4xQH36b6S41T9PRQM4pGvftY9FfGKpiXZNp9crDdoV7lrTg7Uzy8bWpl+zNZ+ZFi1A==}
+  /@react-three/drei/9.34.3_qgxapqo6dnchmipmfh2wecdada:
+    resolution: {integrity: sha512-to6d0l1pELS7IJg64Grkk6nsPD2IFEEmcgRbnik/HxBGv6hbhrti23dA7I0UO6ndaQU2gaNAxqxagupaht5SiA==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
       react: '>=18.0'
@@ -841,7 +841,7 @@ packages:
       suspend-react: 0.0.8_react@18.2.0
       three: 0.145.0
       three-mesh-bvh: 0.5.16_three@0.145.0
-      three-stdlib: 2.17.0_three@0.145.0
+      three-stdlib: 2.17.2_three@0.145.0
       troika-three-text: 0.46.4_three@0.145.0
       utility-types: 3.10.0
       zustand: 3.7.2_react@18.2.0
@@ -3790,8 +3790,8 @@ packages:
       three: 0.145.0
     dev: false
 
-  /three-stdlib/2.17.0_three@0.145.0:
-    resolution: {integrity: sha512-m19X4+ajh+2EJIVcjB288LgbqTli5b8kFahJlg9oNCBfaL8geCgEoM4OUirgV0Ez6Lr58N1MPBR6LjJt7ALfKQ==}
+  /three-stdlib/2.17.2_three@0.145.0:
+    resolution: {integrity: sha512-7ZLCJJogtn1D1MlUi7q0iLUbrxj7K++YxjHIIz5AZ4wX4E137BgiiTmhH4XhAuvXGRk9ph3ZtoHTfJBXhqDX3w==}
     peerDependencies:
       three: '>=0.122.0'
     dependencies:
