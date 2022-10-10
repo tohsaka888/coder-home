@@ -16,7 +16,7 @@ specifiers:
   framer-motion: 7.5.3
   moment: 2.29.4
   next: 12.3.0
-  next-transpile-modules: 9.0.0
+  next-transpile-modules: 9.1.0
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: 4.4.0
@@ -55,7 +55,7 @@ devDependencies:
   '@types/three': 0.144.0
   eslint: 8.25.0
   eslint-config-next: 12.3.0_z4bbprzjrhnsfa24uvmcbu7f5q
-  next-transpile-modules: 9.0.0
+  next-transpile-modules: 9.1.0
   typescript: 4.8.4
 
 packages:
@@ -2537,8 +2537,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-transpile-modules/9.0.0:
-    resolution: {integrity: sha512-VCNFOazIAnXn1hvgYYSTYMnoWgKgwlYh4lm1pKbSfiB3kj5ZYLcKVhfh3jkPOg1cnd9DP+pte9yCUocdPEUBTQ==}
+  /next-transpile-modules/9.1.0:
+    resolution: {integrity: sha512-yzJji65xDqcIqjvx5vPJcs1M+MYQTzLM1pXH/qf8Q88ohx+bwVGDc1AeV+HKr1NwvMCNTpwVPSFI7cA5WdyeWA==}
     dependencies:
       enhanced-resolve: 5.10.0
       escalade: 3.1.1
