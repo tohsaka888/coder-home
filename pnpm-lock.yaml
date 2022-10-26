@@ -5,7 +5,7 @@ specifiers:
   '@react-spring/web': 9.5.5
   '@react-three/drei': 9.37.1
   '@react-three/fiber': 8.8.10
-  '@types/node': 18.11.6
+  '@types/node': 18.11.7
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.7
   '@types/styled-components': 5.1.26
@@ -48,7 +48,7 @@ dependencies:
   three: 0.145.0
 
 devDependencies:
-  '@types/node': 18.11.6
+  '@types/node': 18.11.7
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.7
   '@types/styled-components': 5.1.26
@@ -903,8 +903,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node/18.11.6:
-    resolution: {integrity: sha512-j3CEDa2vd96K0AXF8Wur7UucACvnjkk8hYyQAHhUNciabZLDl9nfAEVUSwmh245OOZV15bRA3Y590Gi5jUcDJg==}
+  /@types/node/18.11.7:
+    resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
     dev: true
 
   /@types/offscreencanvas/2019.7.0:
