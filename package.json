@@ -13,7 +13,7 @@
     "@react-spring/web": "9.5.5",
     "@react-three/drei": "9.34.4",
     "@react-three/fiber": "8.8.10",
-    "antd": "4.23.5",
+    "antd": "4.23.6",
     "framer-motion": "7.6.1",
     "moment": "2.29.4",
     "next": "13.0.0",
