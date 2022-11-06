@@ -11,7 +11,7 @@
   "dependencies": {
     "@ant-design/plots": "1.2.2",
     "@react-spring/web": "9.5.5",
-    "@react-three/drei": "9.38.1",
+    "@react-three/drei": "9.40.0",
     "@react-three/fiber": "8.9.1",
     "antd": "4.23.6",
     "framer-motion": "7.6.2",
