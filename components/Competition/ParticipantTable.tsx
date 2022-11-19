@@ -7,7 +7,7 @@
  */
 
 import { Col, Form, Input, Row, Table } from "antd";
-import { ColumnsType } from "antd/lib/table";
+import { ColumnsType } from "antd/es/table";
 import useGetCompetitionDetail from "hooks/services/useGetCompetitionDetail";
 import React, { useMemo, useState } from "react";
 import {

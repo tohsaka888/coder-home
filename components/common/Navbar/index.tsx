@@ -15,7 +15,7 @@ import {
   BsTwitch,
   BsPersonCircle,
 } from "react-icons/bs";
-import { ItemType } from "antd/lib/menu/hooks/useItems";
+import { ItemType } from "antd/es/menu/hooks/useItems";
 import useGetCompetitionList from "hooks/services/useGetCompetitionList";
 import { Flex } from "styles/index.style";
 import Logo from "./Logo";
@@ -62,13 +62,17 @@ function Navbar() {
   const items: ItemType[] = useMemo(() => {
     return [
       {
-        icon: <BsTrophyFill />,
-        label: <span style={{ marginLeft: "18px" }}>比赛</span>,
+        icon: <BsTrophyFill style={{ marginLeft: "16px" }} />,
+        label: (
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>比赛</span>
+        ),
         key: "competition",
       },
       {
-        icon: <BsTwitch size={15} />,
-        label: <span style={{ marginLeft: "18px" }}>活动</span>,
+        icon: <BsTwitch size={15} style={{ marginLeft: "16px" }} />,
+        label: (
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>活动</span>
+        ),
         key: "activity",
       },
     ];
@@ -76,13 +80,22 @@ function Navbar() {
 
   return (
     <LoginModalShowContext.Provider value={{ modal, setModal }}>
-      <Header style={style}>
-        <Flex alignItems="center" justifyContent="space-between">
+      <Header
+        style={{
+          ...style,
+          borderBottom: pathname === "/" ? "none" : "1px solid #dfdfdf",
+        }}
+      >
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          style={{ height: "100%", padding: "0px 20px" }}
+        >
           <Flex alignItems="center">
             <Logo />
             <Menu
-              theme="dark"
-              style={{ background: "transparent" }}
+              theme={pathname === "/" ? "dark" : "light"}
+              style={{ background: "transparent", border: "none" }}
               items={items}
               defaultSelectedKeys={[pathname.split("/")[1]]}
               mode={"horizontal"}

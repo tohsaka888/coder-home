@@ -15,7 +15,7 @@ export const PartContainer = styled.div`
 `;
 
 export const Container = styled.div`
-  height: calc(100vh - 65px);
+  height: calc(100vh - 45px);
   overflow-x: hidden;
   overflow-y: auto;
   &::-webkit-scrollbar {
