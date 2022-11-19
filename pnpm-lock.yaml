@@ -10,7 +10,7 @@ specifiers:
   '@types/react-dom': 18.0.9
   '@types/styled-components': 5.1.26
   '@types/three': 0.146.0
-  antd: 4.24.2
+  antd: 4.24.3
   eslint: 8.28.0
   eslint-config-next: 13.0.3
   framer-motion: 7.6.7
@@ -33,7 +33,7 @@ dependencies:
   '@react-spring/web': 9.5.5_biqbaboplfbrettd7655fr4n2y
   '@react-three/drei': 9.40.0_xwynmv5llzsuuouxruzymqw67e
   '@react-three/fiber': 8.9.1_mjlgqb43i6mvslmnwgzrdumoh4
-  antd: 4.24.2_biqbaboplfbrettd7655fr4n2y
+  antd: 4.24.3_biqbaboplfbrettd7655fr4n2y
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   next: 13.0.3_biqbaboplfbrettd7655fr4n2y
@@ -1119,8 +1119,8 @@ packages:
       color-convert: 2.0.1
     dev: true
 
-  /antd/4.24.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-ItSltW72hkQCPE/xjl27n58STTGEhL85+Gj2I6TPnu5JYsAKHWfHu7hyGWXPXV015Oh48tqL1QUovxd/kCaUtg==}
+  /antd/4.24.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-3Jv9ktv3Zy1shiVdwnvCgbwRExyGj9Ha8P+GA2rQXBP/t3G7EvpSijSx7cdIy6eLYjEKjuNTqNv0c2kxQX5obQ==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
