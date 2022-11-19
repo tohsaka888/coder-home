@@ -11,7 +11,7 @@ import { SWRConfig } from "swr";
 import { TokenContext } from "context";
 import { useEffect, useState } from "react";
 import { ConfigProvider } from "antd";
-import zhCN from "antd/lib/locale/zh_CN";
+import zhCN from "antd/locale/zh_CN";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [token, setToken] = useState<string | null>(null);

@@ -14,6 +14,7 @@ import { BackgroundContainer } from "components/LiveBackground/index.style";
 import { competitionUrl } from "config/baseUrl";
 import type { GetServerSideProps, NextPage } from "next";
 import { SWRConfig } from "swr";
+import "antd/dist/reset.css";
 
 const Home: NextPage<{ fallback: Record<string, Response> }> = ({
   fallback,
