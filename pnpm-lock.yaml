@@ -15,6 +15,7 @@ specifiers:
   eslint-config-next: 13.0.4
   framer-motion: 7.6.7
   moment: 2.29.4
+  motion-effect: ^0.1.1
   next: 13.0.4
   next-transpile-modules: 10.0.0
   react: 18.2.0
@@ -36,6 +37,7 @@ dependencies:
   antd: 5.0.0_biqbaboplfbrettd7655fr4n2y
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
+  motion-effect: 0.1.1_biqbaboplfbrettd7655fr4n2y
   next: 13.0.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2623,6 +2625,15 @@ packages:
 
   /moment/2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
+
+  /motion-effect/0.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-fosZfBtpuuf0HAUSCRbnsRdQV5dj9/X24gH8t0zGJBxQgKvjpC329Rmi60UGpDVTm15zBUojmlcG0qiTGLIcmQ==}
+    dependencies:
+      framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
+    transitivePeerDependencies:
+      - react
+      - react-dom
     dev: false
 
   /ms/2.0.0:
