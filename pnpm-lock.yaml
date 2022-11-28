@@ -13,7 +13,7 @@ specifiers:
   antd: 5.0.0
   eslint: 8.28.0
   eslint-config-next: 13.0.5
-  framer-motion: 7.6.7
+  framer-motion: 7.6.12
   moment: 2.29.4
   motion-effect: ^0.1.1
   next: 13.0.5
@@ -35,7 +35,7 @@ dependencies:
   '@react-three/drei': 9.41.3_xwynmv5llzsuuouxruzymqw67e
   '@react-three/fiber': 8.9.1_mjlgqb43i6mvslmnwgzrdumoh4
   antd: 5.0.0_biqbaboplfbrettd7655fr4n2y
-  framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.6.12_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   motion-effect: 0.1.1_biqbaboplfbrettd7655fr4n2y
   next: 13.0.5_biqbaboplfbrettd7655fr4n2y
@@ -2090,8 +2090,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion/7.6.7_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-vEGsjXygf4qSmgXXsCT1FC56DjiZau9tSQTCchwAP2mOHnYHUy5gbthc4RXFWJh4Z/gFtqE8bzEmjahwOrfT7w==}
+  /framer-motion/7.6.12_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Xm1jPB91v6vIr9b+V3q6c96sPzU1jWdvN+Mv4CvIAY23ZIezGNIWxWNGIWj1We0CZ8SSOQkttz8921M10TQjXg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -2630,7 +2630,7 @@ packages:
   /motion-effect/0.1.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-fosZfBtpuuf0HAUSCRbnsRdQV5dj9/X24gH8t0zGJBxQgKvjpC329Rmi60UGpDVTm15zBUojmlcG0qiTGLIcmQ==}
     dependencies:
-      framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.6.12_biqbaboplfbrettd7655fr4n2y
     transitivePeerDependencies:
       - react
       - react-dom
