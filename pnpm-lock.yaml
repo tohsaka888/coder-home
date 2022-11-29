@@ -20,7 +20,7 @@ specifiers:
   next-transpile-modules: 10.0.0
   react: 18.2.0
   react-dom: 18.2.0
-  react-icons: 4.6.0
+  react-icons: 4.7.1
   react-infinite-scroll-component: 6.1.0
   react-is: 18.2.0
   styled-components: 5.3.6
@@ -41,7 +41,7 @@ dependencies:
   next: 13.0.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-icons: 4.6.0_react@18.2.0
+  react-icons: 4.7.1_react@18.2.0
   react-infinite-scroll-component: 6.1.0_react@18.2.0
   react-is: 18.2.0
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
@@ -3481,8 +3481,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-icons/4.6.0_react@18.2.0:
-    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
     peerDependencies:
       react: '*'
     dependencies:
