@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/plots": "1.2.2",
+    "@ant-design/plots": "1.2.3",
     "@react-spring/web": "9.6.1",
     "@react-three/drei": "9.41.3",
     "@react-three/fiber": "8.9.1",

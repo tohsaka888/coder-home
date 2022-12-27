@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ant-design/plots': 1.2.2
+  '@ant-design/plots': 1.2.3
   '@react-spring/web': 9.6.1
   '@react-three/drei': 9.41.3
   '@react-three/fiber': 8.9.1
@@ -30,7 +30,7 @@ specifiers:
   typescript: 4.9.4
 
 dependencies:
-  '@ant-design/plots': 1.2.2_biqbaboplfbrettd7655fr4n2y
+  '@ant-design/plots': 1.2.3_biqbaboplfbrettd7655fr4n2y
   '@react-spring/web': 9.6.1_biqbaboplfbrettd7655fr4n2y
   '@react-three/drei': 9.41.3_xwynmv5llzsuuouxruzymqw67e
   '@react-three/fiber': 8.9.1_mjlgqb43i6mvslmnwgzrdumoh4
@@ -105,13 +105,14 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@ant-design/plots/1.2.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-glu1FpCsaFfObqMnK2/oDqw+B+QWcerTub9UsobkOKYnMDcBF85T50FR+/q9N/73oMTyy8EURihux5ghDlbBXQ==}
+  /@ant-design/plots/1.2.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-0nDRlwVdDkpdsUYZoHrjBczN0qKyObjJXXX/c2BJlZriz3dpQ6xbnYUzYZD1jOr5p29V2XJ83vEFKqyFOBKQZQ==}
     peerDependencies:
       react: '>=16.8.4'
       react-dom: '>=16.8.4'
     dependencies:
       '@antv/g2plot': 2.4.20
+      '@antv/util': 2.0.17
       react: 18.2.0
       react-content-loader: 5.1.4_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
