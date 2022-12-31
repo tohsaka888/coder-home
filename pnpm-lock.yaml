@@ -9,7 +9,7 @@ specifiers:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
-  '@types/three': 0.147.0
+  '@types/three': 0.147.1
   antd: 5.0.0
   eslint: 8.30.0
   eslint-config-next: 13.0.6
@@ -54,7 +54,7 @@ devDependencies:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
-  '@types/three': 0.147.0
+  '@types/three': 0.147.1
   eslint: 8.30.0
   eslint-config-next: 13.0.6_lzzuuodtsqwxnvqeq4g4likcqa
   next-transpile-modules: 10.0.0
@@ -1067,8 +1067,8 @@ packages:
       csstype: 3.1.1
     dev: true
 
-  /@types/three/0.147.0:
-    resolution: {integrity: sha512-IW1P10dhUym3B6wamVqohCYS/BqzT4XYNhRCI8NLfm6mXPrgfm70G6d2E15OdbBmXNdd5yewYWtL/+aClljNvA==}
+  /@types/three/0.147.1:
+    resolution: {integrity: sha512-1dGYrF9E7frAXu3CRUYtTFj97PlA/Q0OedDQBROn3fKjtKXNhXc6/VNgkGod3axJMeNPNFDa6ur9eOcQ+aD0zw==}
     dependencies:
       '@types/webxr': 0.5.0
     dev: true
