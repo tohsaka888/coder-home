@@ -12,7 +12,7 @@
     "@ant-design/plots": "1.2.3",
     "@react-spring/web": "9.6.1",
     "@react-three/drei": "9.41.3",
-    "@react-three/fiber": "8.9.1",
+    "@react-three/fiber": "8.10.0",
     "antd": "5.0.0",
     "framer-motion": "8.0.2",
     "moment": "2.29.4",
