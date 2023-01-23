@@ -9,7 +9,7 @@ specifiers:
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
-  '@types/three': 0.148.0
+  '@types/three': 0.148.1
   antd: 5.0.0
   eslint: 8.32.0
   eslint-config-next: 13.0.6
@@ -32,7 +32,7 @@ specifiers:
 dependencies:
   '@ant-design/plots': 1.2.3_biqbaboplfbrettd7655fr4n2y
   '@react-spring/web': 9.6.1_biqbaboplfbrettd7655fr4n2y
-  '@react-three/drei': 9.53.3_6z5q4lalab5qu6xufrxcrb2khu
+  '@react-three/drei': 9.53.3_jd7krkb75je6uavnphmbkohg34
   '@react-three/fiber': 8.9.1_4tzez3c2xpzuefjrvhpyy55bva
   antd: 5.0.0_biqbaboplfbrettd7655fr4n2y
   framer-motion: 8.0.2_biqbaboplfbrettd7655fr4n2y
@@ -54,7 +54,7 @@ devDependencies:
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
-  '@types/three': 0.148.0
+  '@types/three': 0.148.1
   eslint: 8.32.0
   eslint-config-next: 13.0.6_7uibuqfxkfaozanbtbziikiqje
   next-transpile-modules: 10.0.0
@@ -925,7 +925,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@react-three/drei/9.53.3_6z5q4lalab5qu6xufrxcrb2khu:
+  /@react-three/drei/9.53.3_jd7krkb75je6uavnphmbkohg34:
     resolution: {integrity: sha512-CjzyoLwAU291PO0AzHqz8ccNjV7EbNN6uK4fToGs1Lmtdvt4tng+EDpDD8LpNMvkC1AG0n8RnIerpfMTxfv5BQ==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
@@ -945,7 +945,7 @@ packages:
       lodash.clamp: 4.0.3
       lodash.omit: 4.5.0
       lodash.pick: 4.4.0
-      maath: 0.5.1_tlnwfnyn7n3v55kqcjtib4vrpm
+      maath: 0.5.1_zrah7wsh5heitihsi7jdmrvvay
       meshline: 3.1.6_three@0.148.0
       react: 18.2.0
       react-composer: 5.0.3_react@18.2.0
@@ -1070,8 +1070,8 @@ packages:
       csstype: 3.1.1
     dev: true
 
-  /@types/three/0.148.0:
-    resolution: {integrity: sha512-1GiErjt1pJMadO8EhaxNrtULzdn+f3BbM3YTukiiXBVeRvvx4CXc2rpYdEuEBU/ouCX7Rc95j1HoVG9kFQXQJw==}
+  /@types/three/0.148.1:
+    resolution: {integrity: sha512-gZwIyTBMxKXqJHXmZ0dzvDieuQ4hz8MPNHtkRrAwER/xPlAh9eP2WIfaolvQY+wJAzlNV5a9ceS4JT+i/jybsw==}
     dependencies:
       '@types/webxr': 0.5.0
 
@@ -2658,13 +2658,13 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /maath/0.5.1_tlnwfnyn7n3v55kqcjtib4vrpm:
+  /maath/0.5.1_zrah7wsh5heitihsi7jdmrvvay:
     resolution: {integrity: sha512-qSyiavNFnB957lGQiGvHr+fEgG3ZXrk2upniCAAMsZb54NaZfMLMFakHqp+22OKlix5UNwYqJ8vFeO4hAq0U1Q==}
     peerDependencies:
       '@types/three': '>=0.144.0'
       three: '>=0.144.0'
     dependencies:
-      '@types/three': 0.148.0
+      '@types/three': 0.148.1
       three: 0.148.0
     dev: false
 
