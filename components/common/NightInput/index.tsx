@@ -21,7 +21,8 @@ function NightInput(props: InputProps) {
         initial={{
           height: "1px",
           background: "transparent",
-          borderRadius: '5px',
+          borderRadius: "5px",
+          border: '1px solid #1890ff',
           // borderBottom: '1px solid #1890ff'
         }}
         animate={{
@@ -30,8 +31,6 @@ function NightInput(props: InputProps) {
           height: "2px",
         }}
         transition={{
-          type: "spring",
-          bounce: 1,
           duration: isFocus ? 1 : 0,
           repeat: isFocus ? Infinity : undefined,
           repeatType: isFocus ? "reverse" : undefined,

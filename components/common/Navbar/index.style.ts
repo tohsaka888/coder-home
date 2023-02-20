@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
 
 export const NightFormContainer = styled.div`
   & label {
-    color: #fff !important;
+    // color: #fff !important;
     font-size: 1rem;
   }
 

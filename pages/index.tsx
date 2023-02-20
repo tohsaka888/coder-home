@@ -8,7 +8,7 @@
 import { Loader } from "@react-three/drei";
 import CustomHead from "components/common/CustomHead";
 import Navbar from "components/common/Navbar";
-import Slogan from "components/HomePage/Slogan";
+import { Typing } from "react-typing-effects";
 import LiveBackground from "components/LiveBackground";
 import { BackgroundContainer } from "components/LiveBackground/index.style";
 import { competitionUrl } from "config/baseUrl";
@@ -24,23 +24,28 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
       <CustomHead />
       <Navbar />
       <div className="bg" />
-      <Slogan
-        title={"常州工学院 程序员之家"}
-        locale={"zh"}
-        style={{ color: "#fff", fontSize: "50px" }}
-        highlightStyle={{ color: "#1890ff", fontSize: "50px" }}
-        highlightLength={5}
-        cursorStyle={{
-          width: "38px",
-          height: "8px",
-        }}
-      />
-      <Slogan
-        title={"The Home of Coder"}
-        locale={"en"}
-        style={{ color: "#fff", fontSize: "16px" }}
-        cursorStyle={{ width: "16px", height: "5px" }}
-      />
+      <div style={{ position: "fixed", top: "25%", left: "10%" }}>
+        <div style={{ fontSize: "48px", color: "#1890ff" }}>
+          <span style={{ color: "#cecece", marginRight: "24px" }}>
+            常州工学院
+          </span>
+          程序员之家
+        </div>
+        <div style={{ marginTop: "24px" }}>
+          <Typing
+            interval={100}
+            existTime={800}
+            textStyle={{
+              fontSize: "24px",
+              color: "#cecece",
+              fontStyle: "italic",
+            }}
+            symbolStyle={{ marginLeft: "8px" }}
+          >
+            the home of coder in czu.
+          </Typing>
+        </div>
+      </div>
       <BackgroundContainer>
         <LiveBackground />
       </BackgroundContainer>

@@ -122,7 +122,12 @@ function LoginPanel() {
                 />
                 <div
                   dangerouslySetInnerHTML={{ __html: authcode.data }}
-                  style={{ cursor: "pointer", width: "100px" }}
+                  style={{
+                    cursor: "pointer",
+                    width: "100px",
+                    boxShadow: "0px 0px 10px 1px #1890ff",
+                    borderRadius: '10px'
+                  }}
                   onClick={() => {
                     mutate(`${baseUrl}/api/authcode`);
                   }}
