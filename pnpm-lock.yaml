@@ -15,7 +15,6 @@ specifiers:
   eslint-config-next: 13.0.6
   framer-motion: 8.0.2
   moment: 2.29.4
-  motion-effect: ^0.1.1
   next: 13.0.6
   next-transpile-modules: 10.0.0
   react: 18.2.0
@@ -23,6 +22,7 @@ specifiers:
   react-icons: 4.6.0
   react-infinite-scroll-component: 6.1.0
   react-is: 18.2.0
+  react-typing-effects: ^0.1.1
   styled-components: 5.3.6
   svg-captcha: 1.4.0
   swr: 2.0.0
@@ -37,13 +37,13 @@ dependencies:
   antd: 5.0.0_biqbaboplfbrettd7655fr4n2y
   framer-motion: 8.0.2_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
-  motion-effect: 0.1.1_biqbaboplfbrettd7655fr4n2y
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
   react-infinite-scroll-component: 6.1.0_react@18.2.0
   react-is: 18.2.0
+  react-typing-effects: 0.1.1_framer-motion@8.0.2
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
   svg-captcha: 1.4.0
   swr: 2.0.0_react@18.2.0
@@ -573,17 +573,6 @@ packages:
       '@motionone/easing': 10.15.1
       '@motionone/types': 10.15.1
       '@motionone/utils': 10.15.1
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/dom/10.13.1:
-    resolution: {integrity: sha512-zjfX+AGMIt/fIqd/SL1Lj93S6AiJsEA3oc5M9VkUr+Gz+juRmYN1vfvZd6MvEkSqEjwPQgcjN7rGZHrDB9APfQ==}
-    dependencies:
-      '@motionone/animation': 10.15.1
-      '@motionone/generators': 10.15.1
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
-      hey-listen: 1.0.8
       tslib: 2.4.0
     dev: false
 
@@ -2143,24 +2132,6 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion/7.6.12_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Xm1jPB91v6vIr9b+V3q6c96sPzU1jWdvN+Mv4CvIAY23ZIezGNIWxWNGIWj1We0CZ8SSOQkttz8921M10TQjXg==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@motionone/dom': 10.13.1
-      framesync: 6.1.2
-      hey-listen: 1.0.8
-      popmotion: 11.0.5
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      style-value-types: 5.1.2
-      tslib: 2.4.0
-    optionalDependencies:
-      '@emotion/is-prop-valid': 0.8.8
-    dev: false
-
   /framer-motion/8.0.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-xuIiQchVh/cLqUzzu5/8ok4o0nkwYPyIRtkDl8wDvrQUNRhSfRaZu1MMdzN0TjpBtG66oP03PSLO7Qtu1YqPrA==}
     peerDependencies:
@@ -2174,12 +2145,6 @@ packages:
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-    dev: false
-
-  /framesync/6.1.2:
-    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
-    dependencies:
-      tslib: 2.4.0
     dev: false
 
   /fs.realpath/1.0.0:
@@ -2705,15 +2670,6 @@ packages:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
     dev: false
 
-  /motion-effect/0.1.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-fosZfBtpuuf0HAUSCRbnsRdQV5dj9/X24gH8t0zGJBxQgKvjpC329Rmi60UGpDVTm15zBUojmlcG0qiTGLIcmQ==}
-    dependencies:
-      framer-motion: 7.6.12_biqbaboplfbrettd7655fr4n2y
-    transitivePeerDependencies:
-      - react
-      - react-dom
-    dev: false
-
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
     dev: true
@@ -2942,15 +2898,6 @@ packages:
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
-
-  /popmotion/11.0.5:
-    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
-    dependencies:
-      framesync: 6.1.2
-      hey-listen: 1.0.8
-      style-value-types: 5.1.2
-      tslib: 2.4.0
-    dev: false
 
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
@@ -3598,6 +3545,14 @@ packages:
       scheduler: 0.21.0
     dev: false
 
+  /react-typing-effects/0.1.1_framer-motion@8.0.2:
+    resolution: {integrity: sha512-v6B46e7UZuoYqXNzF6roWIZY3SZ4mqlTXdmlEWsH6nDjGI65y0K8uTNLFPOZB3jbMPLISxe7Xr15Nmyg0rn2og==}
+    peerDependencies:
+      framer-motion: '>=8.0.0'
+    dependencies:
+      framer-motion: 8.0.2_biqbaboplfbrettd7655fr4n2y
+    dev: false
+
   /react-use-measure/2.1.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig==}
     peerDependencies:
@@ -3878,13 +3833,6 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
     dev: true
-
-  /style-value-types/5.1.2:
-    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: false
 
   /styled-components/5.3.6_7i5myeigehqah43i5u7wbekgba:
     resolution: {integrity: sha512-hGTZquGAaTqhGWldX7hhfzjnIYBZ0IXQXkCYdvF1Sq3DsUaLx6+NTHC5Jj1ooM2F68sBiVz3lvhfwQs/S3l6qg==}
