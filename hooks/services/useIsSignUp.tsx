@@ -35,7 +35,7 @@ function useIsSignUp() {
     loginStatus?.username
       ? [
           `${competitionUrl}/api/competition/is-sign-up/${query.id}`,
-          loginStatus?.username,
+          // loginStatus?.username,
         ]
       : null,
     getIsSignUp
