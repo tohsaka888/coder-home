@@ -23,19 +23,21 @@ function Banner() {
         flex: 0,
       }}
     >
-      <Carousel autoplay style={{ width: "500px" }}>
-        {competition?.banners.map((banner) => {
-          return (
-            <Image
-              alt={"none"}
-              src={banner.url || ""}
-              key={banner.uid}
-              width={500}
-              height={300}
-            />
-          );
-        })}
-      </Carousel>
+      <div style={{ width: "500px" }}>
+        <Carousel autoplay style={{ width: "500px" }}>
+          {competition?.banners.map((banner) => {
+            return (
+              <Image
+                alt={"none"}
+                src={banner.url || ""}
+                key={banner.uid}
+                width={500}
+                height={300}
+              />
+            );
+          })}
+        </Carousel>
+      </div>
     </PartContainer>
   );
 }

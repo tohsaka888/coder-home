@@ -17,13 +17,11 @@ function NightInput(props: InputProps) {
           setIsFocus(false);
         }}
       />
-      <motion.div
+      {/* <motion.div
         initial={{
-          height: "1px",
+          height: "2px",
           background: "transparent",
-          borderRadius: "5px",
-          border: '1px solid #1890ff',
-          // borderBottom: '1px solid #1890ff'
+          marginTop: "2px",
         }}
         animate={{
           background: isFocus ? "#1890ff" : "transparent",
@@ -31,11 +29,11 @@ function NightInput(props: InputProps) {
           height: "2px",
         }}
         transition={{
-          duration: isFocus ? 1 : 0,
+          duration: isFocus ? 2 : 0,
           repeat: isFocus ? Infinity : undefined,
-          repeatType: isFocus ? "reverse" : undefined,
+          // repeatType: isFocus ? "reverse" : undefined,
         }}
-      />
+      /> */}
     </NightInputContainer>
   );
 }

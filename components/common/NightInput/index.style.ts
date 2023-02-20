@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const NightInputContainer = styled.div`
   & * {
-    border: none;
+    /* border: none; */
   }
   & .ant-input {
-    background-color: transparent !important;
-    color: #fff !important;
+    /* background-color: transparent !important; */
+    color: #000 !important;
   }
 
   & .ant-input:focus {
