@@ -60,12 +60,11 @@ function LoginModal({ width, height, title, children }: Props) {
               marginLeft: "0px",
               top: "0px",
               zIndex: 100000,
-              backgroundColor: "#2c2c2c",
+              backgroundColor: "#fff",
               scale: 0,
               boxShadow: "10px 10px 30px #253748,-10px -10px 30px #253748",
               borderRadius: "8px",
               padding: "8px",
-              color: "#fff",
             }}
             exit={{
               width: "0px",
@@ -84,7 +83,10 @@ function LoginModal({ width, height, title, children }: Props) {
               top: "18vh",
             }}
           >
-            <ImageContainer left={width / 2 - 50} top={-80}>
+            <ImageContainer
+              left={width / 2 - 50}
+              top={-80}
+            >
               <Image
                 src={"/login.svg"}
                 alt={"login"}
@@ -107,8 +109,8 @@ function LoginModal({ width, height, title, children }: Props) {
               }}
             >
               <BsFillXCircleFill
-                size={30}
-                color={"#fff"}
+                size={20}
+                color={"#000"}
                 onClick={() => {
                   setModal({ ...modal, visible: false });
                 }}

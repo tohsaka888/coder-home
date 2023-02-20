@@ -6,7 +6,7 @@ export const NightInputContainer = styled.div`
   }
   & .ant-input {
     background-color: transparent !important;
-    color: #fff;
+    color: #fff !important;
   }
 
   & .ant-input:focus {
