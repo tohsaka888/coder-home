@@ -26,14 +26,14 @@
     "styled-components": "5.3.6",
     "svg-captcha": "1.4.0",
     "swr": "2.0.0",
-    "three": "0.148.0"
+    "three": "0.149.0"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
     "@types/styled-components": "5.1.26",
-    "@types/three": "0.148.1",
+    "@types/three": "0.149.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.0.6",
     "next-transpile-modules": "10.0.0",
