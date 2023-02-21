@@ -6,7 +6,7 @@ specifiers:
   '@react-three/drei': 9.53.3
   '@react-three/fiber': 8.9.1
   '@types/node': 18.11.18
-  '@types/react': 18.0.27
+  '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
   '@types/three': 0.148.1
@@ -51,7 +51,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.18
-  '@types/react': 18.0.27
+  '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
   '@types/styled-components': 5.1.26
   '@types/three': 0.148.1
@@ -1004,7 +1004,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 18.0.28
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -1026,23 +1026,23 @@ packages:
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 18.0.28
     dev: true
 
   /@types/react-reconciler/0.26.7:
     resolution: {integrity: sha512-mBDYl8x+oyPX/VBb3E638N0B7xG+SPk/EAMcVPeexqus/5aTpTphQi0curhhshOqRrc9t6OPoJfEUkbymse/lQ==}
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 18.0.28
     dev: false
 
   /@types/react-reconciler/0.28.0:
     resolution: {integrity: sha512-5cjk9ottZAj7eaTsqzPUIlrVbh3hBAO2YaEL1rkjHKB3xNAId7oU8GhzvAX+gfmlfoxTwJnBjPxEHyxkEA1Ffg==}
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 18.0.28
     dev: false
 
-  /@types/react/18.0.27:
-    resolution: {integrity: sha512-3vtRKHgVxu3Jp9t718R9BuzoD4NcQ8YJ5XRzsSKxNDiDonD2MXIT1TmSkenxuCycZJoQT5d2vE8LwWJxBC1gmA==}
+  /@types/react/18.0.28:
+    resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -1055,7 +1055,7 @@ packages:
     resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.27
+      '@types/react': 18.0.28
       csstype: 3.1.1
     dev: true
 
