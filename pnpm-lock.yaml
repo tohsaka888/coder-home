@@ -13,7 +13,7 @@ specifiers:
   antd: 5.0.0
   eslint: 8.34.0
   eslint-config-next: 13.0.6
-  framer-motion: 9.0.4
+  framer-motion: 9.0.7
   moment: 2.29.4
   next: 13.0.6
   next-transpile-modules: 10.0.0
@@ -35,7 +35,7 @@ dependencies:
   '@react-three/drei': 9.53.3_acp5kfa4z4plfwchbmcjp4bcyi
   '@react-three/fiber': 8.9.1_ute6kgba6tjflznmd5zvq2zrly
   antd: 5.0.0_biqbaboplfbrettd7655fr4n2y
-  framer-motion: 9.0.4_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 9.0.7_biqbaboplfbrettd7655fr4n2y
   moment: 2.29.4
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -43,7 +43,7 @@ dependencies:
   react-icons: 4.6.0_react@18.2.0
   react-infinite-scroll-component: 6.1.0_react@18.2.0
   react-is: 18.2.0
-  react-typing-effects: 0.1.1_framer-motion@9.0.4
+  react-typing-effects: 0.1.1_framer-motion@9.0.7
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
   svg-captcha: 1.4.0
   swr: 2.0.0_react@18.2.0
@@ -2132,8 +2132,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion/9.0.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-lZ1+2/WBn8iYRYmeEFpu/X2fI1GNwJL+X21EpnWwKP3vkJsnWBXZF5kHF29wIPk9sBU2xDIpDm9SAVo206bp9A==}
+  /framer-motion/9.0.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-2n4REUNiu/AsX2fZOp8Z/wnL8XXi2kXrqmCi9UfaydpXgGLnbwq61m9PjOuzECj6iedHNRCvqAMsDIeDzeLSdw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -3545,12 +3545,12 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-typing-effects/0.1.1_framer-motion@9.0.4:
+  /react-typing-effects/0.1.1_framer-motion@9.0.7:
     resolution: {integrity: sha512-v6B46e7UZuoYqXNzF6roWIZY3SZ4mqlTXdmlEWsH6nDjGI65y0K8uTNLFPOZB3jbMPLISxe7Xr15Nmyg0rn2og==}
     peerDependencies:
       framer-motion: '>=8.0.0'
     dependencies:
-      framer-motion: 9.0.4_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 9.0.7_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /react-use-measure/2.1.1_biqbaboplfbrettd7655fr4n2y:
