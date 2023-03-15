@@ -12,6 +12,8 @@ import { TokenContext } from "context";
 import { useEffect, useState } from "react";
 import { ConfigProvider } from "antd";
 import zhCN from "antd/locale/zh_CN";
+import Navbar from "components/common/Navbar";
+import CustomHead from "components/common/CustomHead";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [token, setToken] = useState<string | null>(null);
@@ -25,6 +27,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SWRConfig>
       <ConfigProvider locale={zhCN}>
         <TokenContext.Provider value={{ token, setToken }}>
+          <CustomHead />
+          <Navbar />
           <Component {...pageProps} />
         </TokenContext.Provider>
       </ConfigProvider>

@@ -22,8 +22,8 @@ function Competition() {
 
   return (
     <>
-      <CustomHead />
-      <Navbar />
+      {/* <CustomHead />
+      <Navbar /> */}
       <Layout style={{ height: "calc(100vh - 45px)" }}>
         <Layout.Sider theme="light" style={{ height: "100%" }} width={"15vw"}>
           {list.length === 0 ? (

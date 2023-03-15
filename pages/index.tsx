@@ -21,8 +21,8 @@ const Home: NextPage<{ fallback: Record<string, Response> }> = ({
 }) => {
   return (
     <SWRConfig value={{ fallback }}>
-      <CustomHead />
-      <Navbar />
+      {/* <CustomHead /> */}
+      {/* <Navbar /> */}
       <div className="bg" />
       <div style={{ position: "fixed", top: "25%", left: "10%" }}>
         <div style={{ fontSize: "48px", color: "#1890ff" }}>

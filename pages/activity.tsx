@@ -16,7 +16,7 @@ function ActivityPage() {
   return (
     <>
       <CustomHead />
-      <Navbar />
+      {/* <Navbar /> */}
       <Layout.Content>
         <Detail />
       </Layout.Content>

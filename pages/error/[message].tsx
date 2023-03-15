@@ -16,8 +16,8 @@ function ErrorPage() {
   const { query, push } = useRouter();
   return (
     <>
-      <CustomHead />
-      <Navbar />
+      {/* <CustomHead />
+      <Navbar /> */}
       <Result
         status="500"
         title="呜呼,发生了错误"

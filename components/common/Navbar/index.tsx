@@ -28,6 +28,7 @@ import useToken from "hooks/useToken";
 import { useSWRConfig } from "swr";
 import { loginUrl } from "config/baseUrl";
 import RegisterPanel from "./RegisterPanel";
+import { HomePage } from "typings";
 const LoginModal = dynamic(() => import("./LoginModal"), { ssr: false });
 
 function Navbar() {
@@ -75,6 +76,13 @@ function Navbar() {
         ),
         key: "activity",
       },
+      {
+        icon: <BsTwitch size={15} style={{ marginLeft: "16px" }} />,
+        label: (
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>每日一题</span>
+        ),
+        key: "daily",
+      },
     ];
   }, []);
 
@@ -106,6 +114,8 @@ function Navbar() {
                   }
                 } else if (info.key === "activity") {
                   router.push(`/activity`);
+                } else {
+                  router.push(`/daily`);
                 }
               }}
             />
