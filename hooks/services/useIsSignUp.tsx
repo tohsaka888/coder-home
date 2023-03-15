@@ -20,6 +20,7 @@ type ResponseData =
 function useIsSignUp() {
   const { loginStatus } = useLoginStatus();
   const { push, query } = useRouter();
+  const url = `${competitionUrl}/api/competition/is-sign-up/${query.id}`;
   const getIsSignUp = useCallback(async (url: string, username: string) => {
     const res = await fetch(url, {
       method: "POST",
@@ -33,12 +34,10 @@ function useIsSignUp() {
 
   const { data, error, mutate } = useSWR(
     loginStatus?.username
-      ? [
-          `${competitionUrl}/api/competition/is-sign-up/${query.id}`,
-          // loginStatus?.username,
-        ]
-      : null,
-    getIsSignUp
+      ? url
+      : // loginStatus?.username,
+        null,
+    () => getIsSignUp(url, loginStatus?.username || "")
   );
 
   const isSignUp = useMemo(() => {
