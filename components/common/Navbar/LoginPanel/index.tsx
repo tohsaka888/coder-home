@@ -173,7 +173,7 @@ function LoginPanel() {
             onClick={async () => {
               await form.validateFields();
               await login({ ...account });
-              setModal((model) => ({ ...model, visible: false }));
+              setModal((model: any) => ({ ...model, visible: false }));
             }}
           >
             登录

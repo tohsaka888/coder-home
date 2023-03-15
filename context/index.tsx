@@ -7,6 +7,7 @@
  */
 
 import React, { createContext } from "react";
+import { Context } from "typings";
 
 export const LoginModalShowContext =
   createContext<Context.LoginModalProps | null>(null);
