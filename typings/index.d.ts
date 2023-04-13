@@ -1,11 +1,3 @@
-/*
- * @Author: tohsaka888
- * @Date: 2022-09-23 15:03:00
- * @LastEditors: tohsaka888
- * @LastEditTime: 2022-09-26 12:53:19
- * @Description: type
- */
-
 declare namespace HomePage {
   type ModalProps = {
     type: "login" | "register" | "forget";
@@ -30,4 +22,16 @@ export type Question = {
   answer: Record<"A" | "B" | "C" | "D", string>;
   id: string;
   correctAnswer: string;
+};
+
+export type SubmitQuestion = Pick<Question, "id" | "answer">;
+
+export type CheckAnswerParams = {
+  quesionLists: SubmitQuestion[];
+  userId: string;
+};
+
+export type CheckedResult = {
+  id: string;
+  isCorrect: boolean;
 };
