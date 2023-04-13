@@ -7,13 +7,15 @@
  */
 
 import React, { CSSProperties, useMemo, useState } from "react";
-import { Button, Layout, Menu } from "antd";
+import { Button, Layout, Menu, message } from "antd";
 import { useRouter } from "next/router";
 import {
   BsGithub,
   BsTrophyFill,
   BsTwitch,
   BsPersonCircle,
+  BsList,
+  BsSafe,
 } from "react-icons/bs";
 import { ItemType } from "antd/es/menu/hooks/useItems";
 import useGetCompetitionList from "hooks/services/useGetCompetitionList";
@@ -77,11 +79,20 @@ function Navbar() {
         key: "activity",
       },
       {
-        icon: <BsTwitch size={15} style={{ marginLeft: "16px" }} />,
+        icon: <BsSafe size={15} style={{ marginLeft: "16px" }} />,
         label: (
-          <span style={{ marginLeft: "18px", marginRight: "16px" }}>每日一题</span>
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>
+            每日一题
+          </span>
         ),
         key: "daily",
+      },
+      {
+        icon: <BsList size={15} style={{ marginLeft: "16px" }} />,
+        label: (
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>题库</span>
+        ),
+        key: "list",
       },
     ];
   }, []);
@@ -114,8 +125,14 @@ function Navbar() {
                   }
                 } else if (info.key === "activity") {
                   router.push(`/activity`);
+                } else if (info.key === "list") {
+                  router.push("/list");
                 } else {
-                  router.push(`/daily`);
+                  if (loginStatus) {
+                    router.push(`/daily/${loginStatus?.username}`);
+                  } else {
+                    message.error({ key: "login", content: "请先登录" });
+                  }
                 }
               }}
             />

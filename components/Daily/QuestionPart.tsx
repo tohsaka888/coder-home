@@ -1,33 +1,40 @@
 import { message, Radio, Space } from "antd";
-import React from "react";
-import { Question } from "typings";
+import React, { useState } from "react";
+import { Question, SubmitQuestion } from "typings";
 import { QuestionContainer, QuestionTitle } from "./index.styled";
+import { useAnswerList } from "context/AnswerListContext";
 
 function QuestionPart({
   question,
   index,
+  isCorrect,
 }: {
   question: Question;
   index: number;
+  isCorrect?: boolean;
 }) {
+  const { setAnswerList } = useAnswerList();
   return (
     <QuestionContainer>
-      <QuestionTitle>{index + 1 + ". " + question.question}</QuestionTitle>
+      <QuestionTitle isCorrect={isCorrect}>
+        {index + 1 + ". " + question.question}
+      </QuestionTitle>
       <Radio.Group
         onChange={(e) => {
-          if (e.target.value === question.correctAnswer) {
-            message.success({
-              key: question.id,
-              content: "答对啦！",
-              duration: 0.5,
-            });
-          } else {
-            message.error({
-              key: question.id,
-              content: "答错咯，再试试呢？",
-              duration: 0.5,
-            });
-          }
+          setAnswerList((list: SubmitQuestion[]) => {
+            const isExist = list.some((item) => item.id === question.id);
+            if (isExist) {
+              return list.map((item) => {
+                if (item.id === question.id) {
+                  return { ...item, answer: e.target.value };
+                } else {
+                  return item;
+                }
+              });
+            } else {
+              return [...list, { id: question.id, answer: e.target.value }];
+            }
+          });
         }}
       >
         <Space direction="vertical">

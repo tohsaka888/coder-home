@@ -8,10 +8,10 @@
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://coder-home.tohsaka888.asia"
+    ? "https://coder-home.coder-home.top"
     : // ? "http://localhost:3000"
       "http://localhost:3000";
 
-export const activityUrl = `https://cxy-home-activity.tohsaka888.asia`;
-export const competitionUrl = "https://cxy-home-competition.tohsaka888.asia";
-export const loginUrl = "https://cxy-home-login.tohsaka888.asia";
+export const activityUrl = `https://cxy-home-activity.coder-home.top`;
+export const competitionUrl = "https://cxy-home-competition.coder-home.top";
+export const loginUrl = "https://cxy-home-login.coder-home.top";

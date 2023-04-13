@@ -22,9 +22,13 @@ export type Question = {
   answer: Record<"A" | "B" | "C" | "D", string>;
   id: string;
   correctAnswer: string;
+  ['tag_type']: string;
 };
 
-export type SubmitQuestion = Pick<Question, "id" | "answer">;
+export type SubmitQuestion = {
+  id: string;
+  answer: "A" | "B" | "C" | "D";
+};
 
 export type CheckAnswerParams = {
   quesionLists: SubmitQuestion[];

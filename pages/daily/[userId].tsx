@@ -8,8 +8,9 @@ const Daily: NextPage<{ questions: Question[] }> = ({ questions }) => {
   return <Detail questions={questions} />;
 };
 
-Daily.getInitialProps = async () => {
-  const res = await fetch(`${baseUrl}/api/questions`);
+Daily.getInitialProps = async ({query}) => {
+  console.log(query);
+  const res = await fetch(`https://www.coder-home.top:8080/questions/userCF?userId=1`);
   const data = await res.json();
   return {
     questions: data as Question[],
