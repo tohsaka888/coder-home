@@ -143,7 +143,7 @@ const ListPage: NextPage<any> = (props) => {
 };
 
 ListPage.getInitialProps = async () => {
-  const res = await fetch(`https://www.coder-home.top:8080/questions/all`);
+  const res = await fetch(`https://www.coder-home.top:8080/crud/all`);
   const data = await res.json();
   return {
     props: {

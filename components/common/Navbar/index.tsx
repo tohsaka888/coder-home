@@ -16,6 +16,7 @@ import {
   BsPersonCircle,
   BsList,
   BsSafe,
+  BsFile,
 } from "react-icons/bs";
 import { ItemType } from "antd/es/menu/hooks/useItems";
 import useGetCompetitionList from "hooks/services/useGetCompetitionList";
@@ -94,6 +95,13 @@ function Navbar() {
         ),
         key: "list",
       },
+      {
+        icon: <BsFile size={15} style={{ marginLeft: "16px" }} />,
+        label: (
+          <span style={{ marginLeft: "18px", marginRight: "16px" }}>PDF</span>
+        ),
+        key: "pdf",
+      },
     ];
   }, []);
 
@@ -127,6 +135,8 @@ function Navbar() {
                   router.push(`/activity`);
                 } else if (info.key === "list") {
                   router.push("/list");
+                } else if (info.key === "pdf") {
+                  router.push("/pdf");
                 } else {
                   if (loginStatus) {
                     router.push(`/daily/${loginStatus?.username}`);
