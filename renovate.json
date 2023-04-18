@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": ["devDependencies", "dependencies", "peerDependencies"],
       "automerge": true,
       "semanticCommits": "enabled",
       "commitMessagePrefix": "🐳 chore:"
