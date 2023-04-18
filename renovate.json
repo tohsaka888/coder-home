@@ -5,6 +5,7 @@
     {
       "matchDepTypes": ["devDependencies", "dependencies", "peerDependencies"],
       "automerge": true,
+      "automergeType": "branch",
       "semanticCommits": "enabled",
       "commitMessagePrefix": "🐳 chore:"
     }
