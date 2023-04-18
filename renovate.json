@@ -6,9 +6,9 @@
       "matchDepTypes": ["devDependencies", "dependencies", "peerDependencies"],
       "automerge": true,
       "automergeType": "branch",
-      "semanticCommits": "enabled",
-      "matchPackagePatterns": ["lint"],
-      "commitMessagePrefix": "🐳 chore:"
+      "semanticCommits": "enabled",  
+      "commitMessagePrefix": "🐳 chore:",
+      "schedule": ["before 2am everyday"]
     }
   ]
 }
