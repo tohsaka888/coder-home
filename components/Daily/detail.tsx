@@ -1,17 +1,19 @@
 import { baseUrl } from "config/baseUrl";
-import { NextPage } from "next";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { CheckedResult, Question, SubmitQuestion } from "typings";
 import { DetailLayout } from "./index.styled";
 import QuestionPart from "./QuestionPart";
 import { AnswerListContext } from "context/AnswerListContext";
 import { Button, message } from "antd";
 import { useRouter } from "next/router";
+import useQuestions from "hooks/services/useQuestions";
 
-const Detail = ({ questions }: { questions: Question[] }) => {
+const Detail = () => {
   const { query } = useRouter();
   const [answerList, setAnswerList] = useState<SubmitQuestion[]>([]);
   const [checkedResult, setCheckResult] = useState<CheckedResult[]>([]);
+  const { data, mutate } = useQuestions(query.userId as string);
+  const questions = useMemo(() => data?.questions || [], [data]);
 
   const checkAnswers = useCallback(async () => {
     const res = await fetch(`https://www.coder-home.top:8080/check`, {
@@ -33,27 +35,28 @@ const Detail = ({ questions }: { questions: Question[] }) => {
   return (
     <AnswerListContext.Provider value={{ answerList, setAnswerList }}>
       <DetailLayout>
-        {questions.map((question, index) => (
-          <QuestionPart
-            question={question}
-            key={question.id}
-            index={index}
-            isCorrect={
-              checkedResult.find((item) => item.id == question.id)?.isCorrect
-            }
-          />
-        ))}
+        {questions &&
+          questions.map((question, index) => (
+            <QuestionPart
+              question={question}
+              key={question.id}
+              index={index}
+              isCorrect={
+                checkedResult.find((item) => item.id == question.id)?.isCorrect
+              }
+            />
+          ))}
         <Button type="primary" htmlType="submit" onClick={checkAnswers}>
           提交
         </Button>
-        {/* <Button
+        <Button
           style={{ marginLeft: "16px" }}
           onClick={() => {
-            setAnswerList([]);
+            mutate();
           }}
         >
-          重置
-        </Button> */}
+          刷新题目
+        </Button>
       </DetailLayout>
     </AnswerListContext.Provider>
   );
