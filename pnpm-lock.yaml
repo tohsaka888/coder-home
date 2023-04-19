@@ -32,8 +32,8 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   react-icons:
-    specifier: 4.6.0
-    version: 4.6.0(react@18.2.0)
+    specifier: 4.8.0
+    version: 4.8.0(react@18.2.0)
   react-infinite-scroll-component:
     specifier: 6.1.0
     version: 6.1.0(react@18.2.0)
@@ -3581,8 +3581,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-icons@4.6.0(react@18.2.0):
-    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+  /react-icons@4.8.0(react@18.2.0):
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
     peerDependencies:
       react: '*'
     dependencies:
