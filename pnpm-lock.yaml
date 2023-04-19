@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@ant-design/plots':
-    specifier: 1.2.3
-    version: 1.2.3(react-dom@18.2.0)(react@18.2.0)
+    specifier: 1.2.5
+    version: 1.2.5(react-dom@18.2.0)(react@18.2.0)
   '@react-spring/web':
     specifier: 9.6.1
     version: 9.6.1(react-dom@18.2.0)(react@18.2.0)
@@ -130,8 +130,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@ant-design/plots@1.2.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0nDRlwVdDkpdsUYZoHrjBczN0qKyObjJXXX/c2BJlZriz3dpQ6xbnYUzYZD1jOr5p29V2XJ83vEFKqyFOBKQZQ==}
+  /@ant-design/plots@1.2.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8Jvu2xC5y5/B38/9Qr6CBiXCZopsGEA3IR4pjLFlkLoT4OHIKr4y8oIvhahM9mh9ZATyjkrZLWJBI8yETrReGg==}
     peerDependencies:
       react: '>=16.8.4'
       react-dom: '>=16.8.4'
