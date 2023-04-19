@@ -17,8 +17,8 @@ dependencies:
     specifier: 5.4.2
     version: 5.4.2(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
-    specifier: 9.0.7
-    version: 9.0.7(react-dom@18.2.0)(react@18.2.0)
+    specifier: 9.1.7
+    version: 9.1.7(react-dom@18.2.0)(react@18.2.0)
   moment:
     specifier: 2.29.4
     version: 2.29.4
@@ -42,7 +42,7 @@ dependencies:
     version: 18.2.0
   react-typing-effects:
     specifier: ^0.1.1
-    version: 0.1.1(framer-motion@9.0.7)
+    version: 0.1.1(framer-motion@9.1.7)
   styled-components:
     specifier: 5.3.9
     version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
@@ -597,53 +597,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
-    dev: false
-
-  /@motionone/animation@10.15.1:
-    resolution: {integrity: sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ==}
-    dependencies:
-      '@motionone/easing': 10.15.1
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/dom@10.15.3:
-    resolution: {integrity: sha512-FQ7a2zMBXc1UeU8CG9G3yDpst55fbb0+C9A0VGfwOITitBCzigKZnXRgsRSWWR+FW57GSc13eGQxtYB0lKG0Ng==}
-    dependencies:
-      '@motionone/animation': 10.15.1
-      '@motionone/generators': 10.15.1
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/easing@10.15.1:
-    resolution: {integrity: sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw==}
-    dependencies:
-      '@motionone/utils': 10.15.1
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/generators@10.15.1:
-    resolution: {integrity: sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ==}
-    dependencies:
-      '@motionone/types': 10.15.1
-      '@motionone/utils': 10.15.1
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/types@10.15.1:
-    resolution: {integrity: sha512-iIUd/EgUsRZGrvW0jqdst8st7zKTzS9EsKkP+6c6n4MPZoQHwiHuVtTQLD6Kp0bsBLhNzKIBlHXponn/SDT4hA==}
-    dev: false
-
-  /@motionone/utils@10.15.1:
-    resolution: {integrity: sha512-p0YncgU+iklvYr/Dq4NobTRdAPv9PveRDUXabPEeOjBLSO/1FNB2phNTZxOxpi1/GZwYpAoECEa0Wam+nsmhSw==}
-    dependencies:
-      '@motionone/types': 10.15.1
-      hey-listen: 1.0.8
-      tslib: 2.4.0
     dev: false
 
   /@next/env@13.0.6:
@@ -2226,14 +2179,12 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion@9.0.7(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-2n4REUNiu/AsX2fZOp8Z/wnL8XXi2kXrqmCi9UfaydpXgGLnbwq61m9PjOuzECj6iedHNRCvqAMsDIeDzeLSdw==}
+  /framer-motion@9.1.7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nKxBkIO4IPkMEqcBbbATxsVjwPYShKl051yhBv9628iAH6JLeHD0siBHxkL62oQzMC1+GNX73XtPjgP753ufuw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@motionone/dom': 10.15.3
-      hey-listen: 1.0.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tslib: 2.4.0
@@ -2410,10 +2361,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-
-  /hey-listen@1.0.8:
-    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
-    dev: false
 
   /hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -3673,12 +3620,12 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-typing-effects@0.1.1(framer-motion@9.0.7):
+  /react-typing-effects@0.1.1(framer-motion@9.1.7):
     resolution: {integrity: sha512-v6B46e7UZuoYqXNzF6roWIZY3SZ4mqlTXdmlEWsH6nDjGI65y0K8uTNLFPOZB3jbMPLISxe7Xr15Nmyg0rn2og==}
     peerDependencies:
       framer-motion: '>=8.0.0'
     dependencies:
-      framer-motion: 9.0.7(react-dom@18.2.0)(react@18.2.0)
+      framer-motion: 9.1.7(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /react-use-measure@2.1.1(react-dom@18.2.0)(react@18.2.0):
