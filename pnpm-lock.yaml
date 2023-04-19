@@ -50,8 +50,8 @@ dependencies:
     specifier: 1.4.0
     version: 1.4.0
   swr:
-    specifier: 2.0.0
-    version: 2.0.0(react@18.2.0)
+    specifier: 2.1.3
+    version: 2.1.3(react@18.2.0)
   three:
     specifier: 0.149.0
     version: 0.149.0
@@ -3994,9 +3994,8 @@ packages:
       opentype.js: 0.7.3
     dev: false
 
-  /swr@2.0.0(react@18.2.0):
-    resolution: {integrity: sha512-IhUx5yPkX+Fut3h0SqZycnaNLXLXsb2ECFq0Y29cxnK7d8r7auY2JWNbCW3IX+EqXUg3rwNJFlhrw5Ye/b6k7w==}
-    engines: {pnpm: '7'}
+  /swr@2.1.3(react@18.2.0):
+    resolution: {integrity: sha512-g3ApxIM4Fjbd6vvEAlW60hJlKcYxHb+wtehogTygrh6Jsw7wNagv9m4Oj5Gq6zvvZw0tcyhVGL9L0oISvl3sUw==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
