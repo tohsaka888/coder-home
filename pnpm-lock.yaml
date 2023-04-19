@@ -9,10 +9,10 @@ dependencies:
     version: 9.7.2(react-dom@18.2.0)(react@18.2.0)
   '@react-three/drei':
     specifier: 9.65.3
-    version: 9.65.3(@react-three/fiber@8.9.1)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
+    version: 9.65.3(@react-three/fiber@8.12.1)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
   '@react-three/fiber':
-    specifier: 8.9.1
-    version: 8.9.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
+    specifier: 8.12.1
+    version: 8.12.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
   antd:
     specifier: 5.0.0
     version: 5.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -901,7 +901,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-spring/three@9.6.1(@react-three/fiber@8.9.1)(react@18.2.0)(three@0.149.0):
+  /@react-spring/three@9.6.1(@react-three/fiber@8.12.1)(react@18.2.0)(three@0.149.0):
     resolution: {integrity: sha512-Tyw2YhZPKJAX3t2FcqvpLRb71CyTe1GvT3V+i+xJzfALgpk10uPGdGaQQ5Xrzmok1340DAeg2pR/MCfaW7b8AA==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
@@ -912,7 +912,7 @@ packages:
       '@react-spring/core': 9.6.1(react@18.2.0)
       '@react-spring/shared': 9.6.1(react@18.2.0)
       '@react-spring/types': 9.6.1
-      '@react-three/fiber': 8.9.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
+      '@react-three/fiber': 8.12.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
       react: 18.2.0
       three: 0.149.0
     dev: false
@@ -939,7 +939,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@react-three/drei@9.65.3(@react-three/fiber@8.9.1)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
+  /@react-three/drei@9.65.3(@react-three/fiber@8.12.1)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
     resolution: {integrity: sha512-kVyrCtyCE3gN8On0ndf9798jCVcYHxNF22rWBsIi82SgskHnYIKBde5S6Udvwb4RWL34Y+vz4103MLmjcgMwxg==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
@@ -951,8 +951,8 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.19.0
-      '@react-spring/three': 9.6.1(@react-three/fiber@8.9.1)(react@18.2.0)(three@0.149.0)
-      '@react-three/fiber': 8.9.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
+      '@react-spring/three': 9.6.1(@react-three/fiber@8.12.1)(react@18.2.0)(three@0.149.0)
+      '@react-three/fiber': 8.12.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
       '@use-gesture/react': 10.2.26(react@18.2.0)
       camera-controls: 2.3.4(three@0.149.0)
       detect-gpu: 5.0.20
@@ -978,8 +978,8 @@ packages:
       - '@types/three'
     dev: false
 
-  /@react-three/fiber@8.9.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
-    resolution: {integrity: sha512-xRMO9RGp0DkxSFu5BmmkjCxJ4r0dEpLobtxXdZwI0h2rZZaCnkPM5zThRN8xaZNbZhzRSVICeNOFaZltr9xFyQ==}
+  /@react-three/fiber@8.12.1(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
+    resolution: {integrity: sha512-5KHuXAQsvR7drbL33G/3Fzj9+DkVvSrsQfebLnuVtzQdPApoom4rH8MixTakhGsTheedY1/2s4H1GS82V0+JeA==}
     peerDependencies:
       expo: '>=43.0'
       expo-asset: '>=8.4'
