@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ant-design/plots": "1.2.5",
-    "@react-spring/web": "9.6.1",
+    "@react-spring/web": "9.7.2",
     "@react-three/drei": "9.53.3",
     "@react-three/fiber": "8.9.1",
     "antd": "5.0.0",
