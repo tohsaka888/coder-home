@@ -14,8 +14,8 @@ dependencies:
     specifier: 8.13.0
     version: 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
   antd:
-    specifier: 5.4.6
-    version: 5.4.6(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 5.4.7
+    version: 5.4.7(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
     specifier: 9.1.7
     version: 9.1.7(react-dom@18.2.0)(react@18.2.0)
@@ -1206,8 +1206,8 @@ packages:
       color-convert: 2.0.1
     dev: true
 
-  /antd@5.4.6(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-va8fmtigdSoyO5BTrOQXRI2N22rWqtmd6FNGPlU4xV2S7Bi13/IJvm0BxO+WaNAVrcZuKIruZ+1EI3UHU80/vw==}
+  /antd@5.4.7(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-kFClbdlrultV1SJh8oxHSCCsO3iLGc6QFu0IIHGNuC4JHkDc2Ed94sk7XSmOTcENLcTd7BQYP0A4nK0VERp7vA==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
