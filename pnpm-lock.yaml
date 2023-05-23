@@ -8,8 +8,8 @@ dependencies:
     specifier: 9.7.2
     version: 9.7.2(react-dom@18.2.0)(react@18.2.0)
   '@react-three/drei':
-    specifier: 9.66.1
-    version: 9.66.1(@react-three/fiber@8.13.0)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
+    specifier: 9.68.6
+    version: 9.68.6(@react-three/fiber@8.13.0)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
   '@react-three/fiber':
     specifier: 8.13.0
     version: 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.149.0)
@@ -927,8 +927,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@react-three/drei@9.66.1(@react-three/fiber@8.13.0)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
-    resolution: {integrity: sha512-nbSMsdoL52bLZtOZFMjkjjGzLLkx8hOuYEgvxX19TxR9+YpFnjbfzC3NtsjK719O4OJdNEHZOxmmxoANJJAXEA==}
+  /@react-three/drei@9.68.6(@react-three/fiber@8.13.0)(@types/three@0.149.0)(react-dom@18.2.0)(react@18.2.0)(three@0.149.0):
+    resolution: {integrity: sha512-Jkzs18EqywSHK8uqXmukE5z4C+SDfs5zhnnmE2nh5108ncMbTVUDBLPRdQMFkxU2KIoDcQXQR4vab8WQtfHVMg==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
       react: '>=18.0'
@@ -958,7 +958,7 @@ packages:
       suspend-react: 0.0.8(react@18.2.0)
       three: 0.149.0
       three-mesh-bvh: 0.5.23(three@0.149.0)
-      three-stdlib: 2.21.8(three@0.149.0)
+      three-stdlib: 2.21.12(three@0.149.0)
       troika-three-text: 0.47.1(three@0.149.0)
       utility-types: 3.10.0
       zustand: 3.7.2(react@18.2.0)
@@ -3977,8 +3977,8 @@ packages:
       three: 0.149.0
     dev: false
 
-  /three-stdlib@2.21.8(three@0.149.0):
-    resolution: {integrity: sha512-kqisiKvO4mSy59v5vWqBQSH8famLxp7Z51LxpMJI9GwDxqODaW02rhIwmjYDEzZWNFpjZpoDHVGbdpeHf8h3SA==}
+  /three-stdlib@2.21.12(three@0.149.0):
+    resolution: {integrity: sha512-1on3iwVZV41Hr3M/R6IlyrRKu4cdO2MnDc/WjdATK32oHfTpp38sVPEWm/3F70HXHsI9WfMXwATC7aTfqqC49A==}
     peerDependencies:
       three: '>=0.122.0'
     dependencies:
