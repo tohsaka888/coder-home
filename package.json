@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@types/node": "18.16.18",
-    "@types/react": "18.2.9",
-    "@types/react-dom": "18.2.4",
+    "@types/react": "18.2.12",
+    "@types/react-dom": "18.2.5",
     "@types/styled-components": "5.1.26",
     "@types/three": "0.149.0",
     "eslint": "8.42.0",
