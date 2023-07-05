@@ -21,8 +21,8 @@ dependencies:
     specifier: 5.6.3
     version: 5.6.3(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
-    specifier: 10.12.17
-    version: 10.12.17(react-dom@18.2.0)(react@18.2.0)
+    specifier: 10.12.18
+    version: 10.12.18(react-dom@18.2.0)(react@18.2.0)
   moment:
     specifier: 2.29.4
     version: 2.29.4
@@ -46,7 +46,7 @@ dependencies:
     version: 18.2.0
   react-typing-effects:
     specifier: ^0.1.1
-    version: 0.1.1(framer-motion@10.12.17)
+    version: 0.1.1(framer-motion@10.12.18)
   styled-components:
     specifier: 5.3.11
     version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
@@ -2151,8 +2151,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion@10.12.17(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-IR+aAYntsyu6ofyxqQV4QYotmOqzcuKxhqNpfc3DXJjNWOPpOeSyH0A+In3IEBu49Yx/+PNht+YMeZSdCNaYbw==}
+  /framer-motion@10.12.18(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-cfhiUpPbj+0eEWKjuD+5cz5cMqH71xOtMxGiS/cSGfHn2OlHIEAqFnFyzEMENw5PxWR9bMVhatzzpD6lexmHZQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -3550,12 +3550,12 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-typing-effects@0.1.1(framer-motion@10.12.17):
+  /react-typing-effects@0.1.1(framer-motion@10.12.18):
     resolution: {integrity: sha512-v6B46e7UZuoYqXNzF6roWIZY3SZ4mqlTXdmlEWsH6nDjGI65y0K8uTNLFPOZB3jbMPLISxe7Xr15Nmyg0rn2og==}
     peerDependencies:
       framer-motion: '>=8.0.0'
     dependencies:
-      framer-motion: 10.12.17(react-dom@18.2.0)(react@18.2.0)
+      framer-motion: 10.12.18(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /react-use-measure@2.1.1(react-dom@18.2.0)(react@18.2.0):
