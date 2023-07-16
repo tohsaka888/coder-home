@@ -14,7 +14,7 @@
     "@react-three/drei": "9.78.2",
     "@react-three/fiber": "8.13.5",
     "antd": "5.6.4",
-    "framer-motion": "10.12.18",
+    "framer-motion": "10.12.21",
     "moment": "2.29.4",
     "next": "13.3.0",
     "react": "18.2.0",
