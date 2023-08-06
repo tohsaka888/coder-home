@@ -83,8 +83,8 @@ devDependencies:
     specifier: 13.3.0
     version: 13.3.0(eslint@8.45.0)(typescript@4.9.5)
   next-transpile-modules:
-    specifier: 10.0.0
-    version: 10.0.0
+    specifier: 10.0.1
+    version: 10.0.1
   typescript:
     specifier: 4.9.5
     version: 4.9.5
@@ -4133,8 +4133,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-transpile-modules@10.0.0:
-    resolution: {integrity: sha512-FyeJ++Lm2Fq31gbThiRCrJlYpIY9QaI7A3TjuhQLzOix8ChQrvn5ny4MhfIthS5cy6+uK1AhDRvxVdW17y3Xdw==}
+  /next-transpile-modules@10.0.1:
+    resolution: {integrity: sha512-4VX/LCMofxIYAVV58UmD+kr8jQflpLWvas/BQ4Co0qWLWzVh06FoZkECkrX5eEZT6oJFqie6+kfbTA3EZCVtdQ==}
     dependencies:
       enhanced-resolve: 5.10.0
     dev: true
