@@ -16,7 +16,7 @@
     "antd": "5.7.2",
     "framer-motion": "10.12.21",
     "moment": "2.29.4",
-    "next": "13.3.0",
+    "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
@@ -35,7 +35,7 @@
     "@types/styled-components": "5.1.26",
     "@types/three": "0.149.0",
     "eslint": "8.45.0",
-    "eslint-config-next": "13.3.0",
+    "eslint-config-next": "13.4.13",
     "next-transpile-modules": "10.0.1",
     "typescript": "4.9.5"
   }
