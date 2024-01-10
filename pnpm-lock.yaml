@@ -21,8 +21,8 @@ dependencies:
     specifier: 5.7.2
     version: 5.7.2(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
-    specifier: 10.12.21
-    version: 10.12.21(react-dom@18.2.0)(react@18.2.0)
+    specifier: 10.18.0
+    version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
   moment:
     specifier: 2.29.4
     version: 2.29.4
@@ -46,7 +46,7 @@ dependencies:
     version: 18.2.0
   react-typing-effects:
     specifier: ^0.1.1
-    version: 0.1.1(framer-motion@10.12.21)
+    version: 0.1.1(framer-motion@10.18.0)
   styled-components:
     specifier: 6.0.7
     version: 6.0.7(react-dom@18.2.0)(react@18.2.0)
@@ -3478,8 +3478,8 @@ packages:
       is-callable: 1.2.6
     dev: false
 
-  /framer-motion@10.12.21(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-EmnP73O5+1OGm2jtQNoBPPuAJvhySl+p4/9PL7PPJHt58nkPWeFaxhCJaUDXDf6N3jSLluefxopc0FrMCQ+/tQ==}
+  /framer-motion@10.18.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-oGlDh1Q1XqYPksuTD/usb0I70hq95OUzmL9+6Zd+Hs4XV0oaISBa/UUMSjYiq6m8EUF32132mOJ8xVZS+I0S6w==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -3491,7 +3491,7 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      tslib: 2.4.0
+      tslib: 2.6.1
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
     dev: false
@@ -4982,12 +4982,12 @@ packages:
       scheduler: 0.21.0
     dev: false
 
-  /react-typing-effects@0.1.1(framer-motion@10.12.21):
+  /react-typing-effects@0.1.1(framer-motion@10.18.0):
     resolution: {integrity: sha512-v6B46e7UZuoYqXNzF6roWIZY3SZ4mqlTXdmlEWsH6nDjGI65y0K8uTNLFPOZB3jbMPLISxe7Xr15Nmyg0rn2og==}
     peerDependencies:
       framer-motion: '>=8.0.0'
     dependencies:
-      framer-motion: 10.12.21(react-dom@18.2.0)(react@18.2.0)
+      framer-motion: 10.18.0(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /react-use-measure@2.1.1(react-dom@18.2.0)(react@18.2.0):
@@ -5579,10 +5579,6 @@ packages:
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-
-  /tslib@2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: false
 
   /tslib@2.6.1:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
