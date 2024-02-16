@@ -25,7 +25,7 @@
     "react-typing-effects": "^0.1.1",
     "styled-components": "6.0.7",
     "svg-captcha": "1.4.0",
-    "swr": "2.2.0",
+    "swr": "2.2.5",
     "three": "0.149.0"
   },
   "devDependencies": {
